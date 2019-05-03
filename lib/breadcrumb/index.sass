@@ -1,0 +1,27 @@
+.cello-breadcrumb
+	background: #efefef
+	position: relative
+	.main-breadcrumb
+		width: 100%
+		.breadcrumb
+			display: flex
+			padding: 0
+			list-style: none
+			margin-bottom: 0
+			align-items: center
+			background: transparent
+			li
+				display: flex
+				align-items: center
+				+fz(r(13px))
+				a
+					color: #999999
+				+ li
+					&:before
+						+lnr('\e876')
+						+fz(r(42px))
+						+pad(null .5rem)
+						color: #e0e0e0
+				&:last-child
+					a
+						color: #404040

@@ -1,0 +1,287 @@
+header.cello-header
+	.header-bg
+	.top-nav
+		.container
+			.main-nav
+				.navbar-brand
+					.sitelogo.Module
+						a(href='/')
+							img(alt='', src='./img/logo.png')
+					#login
+					.toggle-button
+						.button
+				.navbar-main
+					.top-main
+						.Module.Module-212
+							.ModuleContent
+								.list-item
+									.item
+										a(href='#')
+											em.fas.fa-shield-alt
+											span Kiểm tra bảo hành
+									.item
+										a(href='#')
+											em.fas.fa-file-alt
+											span Kiểm tra đơn hàng
+						#list-nav
+						.log-in(mapto='#login')
+							ul
+								// 
+								li.welcome-link.fas.fa-user-circle
+									a(href='http://cello.canhcam.gb/Account/UserProfile.aspx') Xin chào: Admin
+								// <li class="logout-link"><a class="" href="http://cello.canhcam.gb/Logoff.aspx">Thoát</a></li>
+					.search-main
+						#ctl00_SearchInput1_pnlSearch.searchbox
+							input#ctl00_SearchInput1_txtSearch.searchinput(onfocus="javascript:watermarkEnter(this, '');", onblur="javascript:watermarkLeave(this, '');", name='ctl00$SearchInput1$txtSearch', type='text', title='Tìm kiếm', autocomplete='off', placeholder='Tìm kiếm')
+							button#ctl00_SearchInput1_btnSearch.searchbutton(onclick="__doPostBack('ctl00$SearchInput1$btnSearch','')") Tìm kiếm
+				.navbar-menu
+					.Module.Module-206
+						.ModuleContent
+							.item
+								a(target='_self', href='http://cello.canhcam.gb/tin-tuc')
+									figure
+										.icon
+											img(src='./img/home/icon-1.png', alt='Tin tức')
+										figcaption
+											p Tin tức
+							.item
+								a(target='_self', href='http://cello.canhcam.gb/thuong-hieu')
+									figure
+										.icon
+											img(src='./img/home/icon-2.png', alt='Thương hiệu')
+										figcaption
+											p Thương hiệu
+							.item
+								a(target='_self', href='http://cello.canhcam.gb/tra-gop')
+									figure
+										.icon
+											img(src='./img/home/icon-3.png', alt='Trả góp')
+										figcaption
+											p Trả góp
+					.cart.Module.Module-210
+						.ModuleContent
+							.cart-toggle.item
+								a(href='javascript:void(0)')
+									figure
+										.icon
+											img(src='./img/home/icon-4.png', alt='')
+										figcaption
+											p
+												| Giỏ hàng
+												| (
+												span 0
+												| )
+							.cartpanel
+								.title Chưa có sản phẩm nào trong giỏ hàng
+								.btn-closecart
+									span.lnr.lnr-cross
+	.bottom-nav
+		.container
+			.Module.Module-211
+				.ModuleContent
+					.nav(mapto='#list-nav')
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/am-thanh')
+								img(src='./img/home/menu-1.png', alt='Âm thanh')
+								span Âm thanh
+							.cello-mega
+								.row
+									.col-lg-9
+										.mega-list
+											.list-item
+												.item.active(data-item='data-1')
+													a(target='_self', href='javascript:void(0)')
+														img(src='./img/home/sub-1.png', alt='Loa di động')
+														span Loa di động
+												.item(data-item='data-2')
+													a(target='_self', href='javascript:void(0)')
+														img(src='./img/home/sub-2.png', alt='Sound Bar / Home Audio')
+														span Sound Bar / Home Audio
+												.item(data-item='data-3')
+													a(target='_self', href='javascript:void(0)')
+														img(src='./img/home/sub-3.png', alt='Bộ giải mã DAC / Amplifier')
+														span Bộ giải mã DAC / Amplifier
+												.item(data-item='data-4')
+													a(target='_self', href='javascript:void(0)')
+														img(src='./img/home/sub-5.png', alt='Loa theo thương hiệu')
+														span Loa theo thương hiệu
+											.list-brand
+												.brand-item.active(data-brand='data-1')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+												.brand-item(data-brand='data-2')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+												.brand-item(data-brand='data-3')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+												.brand-item(data-brand='data-4')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+													.item
+														a(href='javascript:void(0)')
+															img(src='./img/home/sub-6.png', alt='')
+									.col-lg-3
+										.mega-img
+											img(src='./img/home/sub-7.png', alt='Âm thanh')
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/tai-nghe')
+								img(src='./img/home/menu-2.png', alt='Tai nghe')
+								span Tai nghe
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/thiet-bi-deo-tay')
+								img(src='./img/home/menu-3.png', alt='Thiết bị đeo tay')
+								span Thiết bị đeo tay
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/camera')
+								img(src='./img/home/menu-4.png', alt='Camera')
+								span Camera
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/phu-kien')
+								img(src='./img/home/menu-5.png', alt='Phụ kiện')
+								span Phụ kiện
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/san-pham-khac')
+								img(src='./img/home/menu-6.png', alt='Sản phẩm khác')
+								span Sản phẩm khác
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/khuyen-mai')
+								img(src='./img/home/menu-7.png', alt='Khuyến mãi')
+								span Khuyến mãi
+						.nav-item
+							a.nav-link(target='_self', href='http://cello.canhcam.gb/may-dung-roi')
+								img(src='./img/home/menu-8.png', alt='Máy dùng rồi')
+								span Máy dùng rồi

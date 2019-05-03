@@ -1,0 +1,44 @@
+.cello-ttNav
+	+pad(10px null)
+	background: #f7f7f7
+	.row
+		+mar(null -5px)
+		.item
+			+ .item
+				margin-top: r(10px)
+			+pad(null 5px)
+			figure
+				margin-bottom: 0
+				+bor-rad(5px)
+				overflow: hidden
+				position: relative
+				.img
+					img
+						width: 100%
+				&:after
+					content: ''
+					width: 100%
+					+tran(.4s)
+					height: 100%
+					background: rgba(0,0,0,.5)
+					+pos(abs, 0 null null 0)
+				figcaption
+					+pos(abs, 0 null null 0)
+					width: 100%
+					z-index: 10
+					height: 100%
+					+flex-center()
+					h5
+						text-align: center
+						+fz(r(16px))
+						color: #fff
+						+fw(500)
+			&:hover
+				figure
+					&:after
+						opacity: 0
+	+media-breakpoint-up(lg)
+		.row
+			.item
+				+ .item
+					margin-top: 0

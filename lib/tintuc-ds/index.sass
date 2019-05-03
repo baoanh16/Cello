@@ -1,0 +1,53 @@
+.cello-tinTucDs
+	+pad(r(30px) null)
+	background: #f7f7f7
+	+media-breakpoint-up(lg)
+		+pad(r(50px) null)
+	.cello-title
+		text-align: left
+	.item
+		margin-bottom: r(20px)
+		a
+			text-decoration: none
+			figure
+				margin-bottom: 0
+				.img
+					+bor-rad(5px)
+					overflow: hidden
+				figcaption
+					padding-top: 1rem
+					.time
+						color: #aeaeae
+						+fz(r(13px))
+						opacity: .5
+					.title
+						margin-top: r(7px)
+						h3
+							+fz(r(15px))
+							+fw(500)
+							color: #333
+	+media-breakpoint-up(lg)
+		.top-news
+			.item
+				a
+					figure
+						.img
+							position: relative
+							&:after
+								content: ''
+								width: 100%
+								height: 100%
+								+pos(abs,0 null null 0)
+								+tran(.4s)
+								background: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,.8))
+						figcaption
+							+pos(abs, null null r(30px) 0)
+							width: 100%
+							+pad(null r(30px))
+							.time
+								color: #e5e5e5
+							.title
+								margin-top: .35rem
+								h3
+									+fz(r(20px))
+									color: #fff

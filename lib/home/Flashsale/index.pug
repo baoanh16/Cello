@@ -1,0 +1,47 @@
+section.cello-flashSale
+	.container
+		.cello-title
+			h2 Flashsale
+		.swiper-container
+			.swiper-wrapper
+				-for(i=0;i<10;i++)
+					.swiper-slide
+						.productItem
+							.top-item
+								.img
+									img(src="./img/home/item-1.png", alt="")
+								.pro
+									span -15%
+								.gift
+									em.fas.fa-gift
+									span Quà tặng
+								.status
+									span New
+								.time
+									p Còn lại  
+										span.num 24
+										b :
+										span.num 30
+										b :
+										span.num 50
+							.bottom-item
+								.color
+									.color-item(style='background: #000000').active
+									.color-item(style='background: #ff3c00')
+									.color-item(style='background: #cccccc')
+								.name
+									h5 LOA HARMAN/KARDON ONYX STUDIO 3 (ĐEN)
+								.price
+									.old
+										span 3.680.000Đ
+									.new
+										span 2.880.000Đ
+							.buy-now
+								a(href="javascript:void(0)")
+									em.mdi.mdi-cart-outline
+									span MUA NGAY
+		.swiper-nav
+			.swiper-prev
+				em.lnr.lnr-chevron-left
+			.swiper-next
+				em.lnr.lnr-chevron-right

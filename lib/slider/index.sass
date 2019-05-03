@@ -1,0 +1,28 @@
+.cello-slider
+	padding: r(10px) 0
+	background: #f7f7f7
+	.swiper-container
+		.swiper-nav
+			display: none
+	+media-breakpoint-up(md)
+		.swiper-container
+			position: relative
+			.swiper-nav
+				display: block
+				div
+					width: 3rem
+					cursor: pointer
+					height: 3rem
+					+flex-center()
+					opacity: .5
+					+pos(abs, 50% null null null)
+					transform: translateY(-50%)
+					z-index: 22
+					em
+						color: #fff
+						text-shadow: 0 0 6px #000
+						+fz(r(30px))
+					&.swiper-prev
+						left: 0
+					&.swiper-next
+						right: 0

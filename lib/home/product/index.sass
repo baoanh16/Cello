@@ -1,0 +1,101 @@
+.cello-product, .cello-khuyenmai, .cello-spList,.cello-thuonghieu, .cello-thuonghieu-ct
+	+pad(r(30px) null)
+	// background: #f7f7f7
+	+media-breakpoint-up(lg)
+		+pad(r(50px) null r(35px) null)
+		.cello-title
+			margin-bottom: 0
+	a
+		text-decoration: none
+		color: #333
+		transition: all .3s ease-out
+		&:hover
+			color: white
+	.cello-navTab
+		overflow: hidden
+		+bor-rad(5px)
+		.cello-tabList
+			padding-left: 0
+			margin-bottom: 0
+			list-style: none
+			background: #fff
+			// display: none
+			+pad(.5rem 1rem)
+			.item
+				a
+					+fz(r(14px))
+					display: flex
+					min-width: 1px
+					height: 35px
+					min-width: 160px
+					justify-content: center
+					border-radius: 15px
+					align-items: center
+					font-weight: 300
+				&.active, &:hover
+					a
+						color: #2eb135
+			@media (max-width: 991.98px)
+				display: flex
+				overflow-x: auto
+				text-align: center
+				.item
+					flex: 0 0 33.3333%
+					max-width: 33.3333%
+					a
+						font-size: 12px
+						min-width: 1px
+						background: #f7f7f7
+					&.active, &:hover
+						a
+							background: #ff6600
+							color: white
+		.cello-mbTab
+			background-image: linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+			+pad(r(5px) 1rem)
+			color: #fff
+			text-transform: uppercase
+			+fz(r(14px))
+			position: relative
+			user-select: none
+			&:after
+				+mdi('\f140')
+				+fz(1.2rem)
+				+pos(abs, 50% 1rem null null)
+				transform: translateY(-50%)
+			&.active
+				&:after
+					transform: translateY(-50%) rotate(180deg)
+	.cello-tabContent
+		margin-top: r(30px)
+		.list-item
+			display: none
+			&.active
+				display: flex
+			.col-xl-item
+				+media-breakpoint-up(xl)
+					flex: 0 0 20%
+			
+	+media-breakpoint-up(lg)
+		.cello-navTab
+			.cello-mbTab
+				display: none
+			.cello-tabList
+				justify-content: center
+				display: flex
+				background: none
+				.item
+					+mar(null 5px)
+					color: #999999
+					cursor: pointer
+					user-select: none
+					+tran(.4s)
+					a
+						font-size: 16px
+						padding: 0 15px
+					&.active, &:hover
+						a
+							+fw(initial)
+							color: #ffffff
+							background: #ff6600
+							+bor-rad(50px)

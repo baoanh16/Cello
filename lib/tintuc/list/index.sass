@@ -1,0 +1,362 @@
+.cello-tintuc
+	background: #f7f7f7
+	padding-bottom: r(30px)
+	+media-breakpoint-up(lg)
+		padding-bottom: r(80px)
+	.swiper-pagination
+		bottom: auto
+		position: relative
+		.swiper-pagination-bullet
+			background: #464646
+			opacity: 1
+			width: 10px
+			height: 10px
+	.news-list
+		+ .news-list
+			margin-top: 2rem
+			+media-breakpoint-up(lg)
+				margin-top: r(60px)
+	.item
+		text-decoration: none
+		figure
+			position: relative
+			margin-bottom: 0
+			.img
+				+bor-rad(5px)
+				overflow: hidden
+				img
+					width: 100%
+					+tran(.4s)
+			figcaption
+				padding-top: 1rem
+				.time
+					color: #aeaeae
+					+fz(r(13px))
+					opacity: .5
+				.title
+					color: #333
+					margin-top: .35rem
+					h3
+						text-transform: uppercase
+						+fz(r(15px))
+						+fw(500)
+				.view-more
+					display: flex
+					align-items: center
+					margin-top: .5rem
+					color: #aeaeae
+					em
+						margin-right: .25rem
+						+fz(r(20px))
+					span
+						+fz(r(14px))
+						text-transform: uppercase
+			&:hover
+				.img
+					img
+						transform: scale(1.2)
+	.news-1
+		.top-news
+			.swiper-pagination
+				bottom: auto
+				position: relative
+				.swiper-pagination-bullet
+					background: #464646
+					opacity: 1
+					width: 10px
+					height: 10px
+					&.swiper-pagination-bullet-active
+						background: none
+						box-shadow: 0 0 0 2px inset #ff6600
+			.item
+				figure
+					.img
+						+bor-rad(0)
+		.part-news
+			margin-top: 1rem
+			+pad(1rem)
+			background: url('../img/home/bg-2.png')
+			.swiper-pagination
+				.swiper-pagination-bullet
+					+mar(null 4px)
+					&.swiper-pagination-bullet-active
+						background: none
+						box-shadow: 0 0 0 2px inset #ff6600
+			.title
+				margin-bottom: 1rem
+				h5
+					text-transform: uppercase
+					+fz(r(18px))
+					+fw(500)
+					color: #fff
+			.item
+				figure
+					margin-bottom: 0
+					.img
+						+bor-rad(5px)
+						overflow: hidden
+					.title
+						margin-bottom: 0
+						h3
+							color: #fff
+							text-transform: lowercase
+							+fw(500)
+		.video-list
+			margin-top: r(20px)
+			position: relative
+			.swiper-nav
+				margin-top: 1rem
+				+flex-center()
+				div
+					&:focus
+						outline: none
+					em
+						+fz(r(30px))
+						color: #c5c5c5
+					&:hover
+						em
+							color: #ff6600
+				+media-breakpoint-up(lg)
+					margin: 0
+					div
+						+pos(abs, 50% null null null)
+						transform: translateY(-50%)
+						z-index: 9
+						&.swiper-prev
+							right: 100%
+						&.swiper-next
+							left: 100%
+			.item
+				figure
+					.img
+						+bor-rad(0)
+					figcaption
+						padding-top: 0
+						display: flex
+						.play
+							width: 50px
+							height: 50px
+							+flex-center()
+							flex: 0 0 50px
+							background: #ff6600
+							em
+								+fz(1.5rem)
+								color: #fff
+						.title
+							margin-top: 0 
+							flex-grow: 1
+							background: #363636
+							color: #ffffff
+							+pad(r(10px) r(22px))
+							display: flex
+							align-items: center
+							h5
+								+fw(500)
+	.news-2
+		background: #fff
+		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1)
+		.list-title
+			+pad(r(10px) 1rem)
+			display: flex
+			align-items: center
+			justify-content: space-between
+			flex-wrap: wrap
+			h2
+				text-transform: uppercase
+				+fw(500)
+				+fz(r(18px))
+			a
+				+fz(r(15px))
+				text-decoration: none
+				+tran(.4s)
+				color: #999999
+				&:after
+					+lnr('\e87a')
+					margin-left: r(5px)
+					+fz(r(10px))
+				&:hover
+					color: #ff6600
+		.content
+			+pad(1rem)
+			border-top: 1px solid #e1e1e1
+			.top-news
+				.news-item
+					margin-bottom: r(20px)
+			.part-news
+				.news-item
+					+ .news-item
+						margin-top: r(20px)
+					.item
+						figure
+							figcaption
+								.title
+									h3
+										text-transform: lowercase
+	.news-3
+		background: #fff
+		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1)
+		.list-title
+			+pad(r(10px) 1rem)
+			display: flex
+			align-items: center
+			justify-content: space-between
+			flex-wrap: wrap
+			h2
+				text-transform: uppercase
+				+fw(500)
+				+fz(r(18px))
+			a
+				+fz(r(15px))
+				text-decoration: none
+				+tran(.4s)
+				color: #999999
+				&:after
+					+lnr('\e87a')
+					margin-left: r(5px)
+					+fz(r(10px))
+				&:hover
+					color: #ff6600
+		.content
+			+pad(1rem)
+			border-top: 1px solid #e1e1e1
+			.part-news
+				.news-item
+					margin-top: r(20px)
+					.item
+						figure
+							display: flex
+							.img
+								flex: 0 0 210px
+								margin-right: 1rem
+							figcaption
+								padding-top: 0
+	.hot-list
+		border-top: 3px solid #ff6600
+		.content
+			.part-news
+				.news-item
+					.item
+						figure
+							figcaption
+								.title
+									margin-top: 0
+									h3
+										text-transform: uppercase
+	+media-breakpoint-up(sm)
+		.news-1
+			.part-news
+				+pad(r(30px))
+				.title
+					margin-bottom: r(20px)
+					display: flex
+					justify-content: space-between
+					align-items: center
+				.item
+					figure
+						display: flex
+						.img
+							flex: 0 0 150px
+						figcaption
+							padding-top: 0
+							padding-left: 15px
+	+media-breakpoint-up(md)
+		.news-2
+			.content
+				.part-news
+					.news-item
+						+ .news-item
+							margin-top: 0
+	+media-breakpoint-up(lg)
+		.news-1
+			.top-news
+				height: 100%
+				.swiper-container
+					height: 100%
+				.swiper-pagination
+					width: auto
+					+pos(abs, null 2rem r(30px) auto)
+				.item
+					figure
+						height: 100%
+						.img
+							height: 100%
+							position: relative
+							&:after
+								content: ''
+								width: 100%
+								height: 100%
+								+pos(abs,0 null null 0)
+								+tran(.4s)
+								background: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,.8))
+							img
+								height: 100%
+								object-fit: cover
+						figcaption
+							+pos(abs, null null r(30px) 0)
+							width: 100%
+							+pad(null r(30px))
+							.time
+								color: #e5e5e5
+							.title
+								margin-top: .35rem
+								color: #fff
+								h3
+									+fz(r(20px))
+							.view-more
+								margin-top: r(25px)
+					&:hover
+						figure
+							.img
+								&:after
+									opacity: .5
+			.part-news
+				margin-top: 0
+				height: 100%
+				.item
+					figure
+						.img
+							img
+								height: 100%
+								object-fit: cover
+		.news-2
+			.list-title
+				+pad(null r(30px))
+			.content
+				+pad(r(30px))
+			.top-news
+				.item
+					figure
+						.img
+							position: relative
+							&:after
+								content: ''
+								width: 100%
+								height: 100%
+								+pos(abs,0 null null 0)
+								+tran(.4s)
+								background: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,.8))
+						figcaption
+							+pos(abs, null null r(30px) 0)
+							width: 100%
+							+pad(null r(30px))
+							.time
+								color: #e5e5e5
+							.title
+								color: #fff
+								margin-top: .35rem
+								h3
+									+fz(r(20px))
+					&:hover
+						figure
+							.img
+								&:after
+									opacity: .5
+		.news-3
+			.list-title
+				+pad(null r(30px))
+			.content
+				+pad(r(30px))
+				.part-news
+					.news-item
+						&:first-child
+							margin-top: 0

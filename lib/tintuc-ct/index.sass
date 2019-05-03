@@ -1,0 +1,101 @@
+.cello-tinTucDs
+	padding: 30px 0 50px
+	@media (min-width: 992px)
+		padding: 60px 0 100px
+	.createdDate
+		font-size: r(13px)
+		color: color-rgba(lighten(black,20%),.5)
+		span:last-child
+			margin-left: .25rem
+	.title
+		font-size: r(25px)
+		font-weight: 600
+		color: lighten(black,20%)
+		margin-bottom: .8rem
+	.briefContent
+		font-size: r(18px)
+		font-weight: 300
+		color: darken(white,50%)
+		text-decoration: underline
+		text-underline-position: under
+		margin-bottom: .8rem
+		*
+			font-size: inherit
+			font-weight: inherit
+			color: inherit
+	.fullContent
+		*
+			margin-bottom: .8rem
+			font-size: r(15px)
+			font-weight: 400
+			color: lighten(black,20%)
+			text-align: justify
+		h3
+			font-size: r(18px)
+			font-weight: 500
+			text-transform: uppercase
+		img
+			width: 100%
+	.socialShare
+		margin-bottom: 10px
+		a
+			height: 40px
+			padding: 0 20px
+			display: inline-flex
+			justify-content: center
+			align-items: center
+			color: white
+			font-size: r(15px)
+			font-weight: 500
+			margin-top: 10px
+			span:not(:last-child)
+				margin-right: .25rem
+			&:not(:last-child)
+				margin-right: 10px
+			&.facebook
+				background: #445ea1
+			&.twitter
+				background: #58abf5
+			&.pinterest
+				background: #cd1e1f
+			&.google
+				background: #eb4026
+			&.envelope
+				background: #1980bf
+	.otherNews
+		padding: 20px
+		border-top: 3px solid #ff6600
+		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1)
+		background: white
+		h2
+			font-size: r(18px)
+			font-weight: 600
+			color: lighten(black,20%)
+			text-transform: uppercase
+			margin-bottom: 1rem
+		.item
+			display: flex
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+			.img
+				max-width: 170px
+				flex: 0 0 50%
+				border-radius: 4px
+				overflow: hidden
+				img
+					transition: ease-out .3s
+			.caption
+				padding-left: 1rem
+				display: flex
+				flex: 0 0 50%
+				flex-wrap: wrap
+				text-decoration: none
+				h4
+					font-size: r(15px)
+					font-weight: 500
+					color: lighten(black, 20%)
+			&:hover
+				.img
+					img
+						transform: scale(1.1)

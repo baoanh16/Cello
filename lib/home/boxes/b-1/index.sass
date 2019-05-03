@@ -1,0 +1,37 @@
+.cello-boxes
+	background: #fff
+	.item
+		+ .item
+			border-top: 1px solid #ebebeb
+		figure
+			+pad(r(30px))
+			text-align: center
+			margin-bottom: 0
+			@media (max-width: 991.98px)
+				padding: 20px 10px
+			.box-img 
+				margin-bottom: 10px
+			figcaption 
+				h3 
+					+fz(14px)
+					+fw(500)
+					color: #333333
+					text-transform: uppercase
+					padding-bottom: 20px
+					@media (max-width: 991.98px)
+						font-size: 13px
+				p 
+					+fz(13px)
+					+fw(400)
+					color: #999999
+	+media-breakpoint-up(lg) 
+		.item
+			+ .item 
+				border-top: none
+			figure
+				padding-left: 10px
+				padding-right: 10px
+			+ .item
+				figure
+					border-top: 0
+				border-left: 1px solid #ebebeb

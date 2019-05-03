@@ -1,0 +1,145 @@
+.cello-dangnhap
+	+pad(r(30px) null)
+	+media-breakpoint-up(lg)
+		+pad(r(50px) null)
+	.login-panel
+		background-color: rgb(255, 255, 255)
+		box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1)
+		padding: 0
+		.headtitle
+			+fz(r(20px))
+			text-transform: uppercase
+			+fw(600)
+			text-align: center
+			padding-bottom: .5rem
+			border-bottom: 1px solid #ebebeb
+		.panel
+			padding-top: 1rem
+			.panel-heading
+				+fz(r(14px))
+				margin-bottom: r(20px)
+				padding: 0 1.875rem
+			.panel-body
+				padding-bottom: 1rem
+			.form-horizontal
+				.form-group:not(.form-checkbox)
+					+ .form-group
+						margin-top: r(15px)
+					position: relative
+					label
+						transform: translateY(-50%)
+						+pos(abs, 50% null null 1rem)
+					input, select
+						+pad(.5rem 3rem)
+						color: #737d83
+						width: 100%
+						border: 0
+						background: #f5f5f5
+						+bor-rad(50px)
+						+fz(r(14px))
+						-moz-appearance: none
+						-webkit-appearance: none
+						&:focus
+							outline: none
+					&.custom-select
+						&:after
+							+lnr('\e874')
+							+pos(abs, 50% 1rem null null)
+							transform: translateY(-50%)
+					&.btn-login
+						margin-top: r(20px)
+						input
+							color: #fff
+							text-transform: uppercase
+							+fw(500)
+							+pad(.75rem null)
+							background-image: linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+							+fz(r(15px))
+					&.forget
+						display: flex
+						input
+							padding: 0
+							-moz-appearance: initial
+							-webkit-appearance: checkbox
+							width: 15px
+							height: 15px
+							background: white
+							border-radius: 0
+							border: 1px solid lighten(black,20%)
+							&:before
+								content: ''
+					&.login-method
+						p
+							margin-bottom: r(10px)
+							text-align: center
+							+fz(r(14px))
+							position: relative
+							&:before
+								content: ''
+								width: 100%
+								height: 1px
+								background: #ebebeb
+								+pos(abs,50% null null 0)
+								transform: translateY(-50%)
+							span
+								position: relative
+								z-index: 14
+								background: #fff
+						.btn-list
+							.btn
+								+ .btn
+									margin-top: r(10px)
+								display: flex
+								align-items: center
+								+pad(.75rem 1.2rem)
+								color: #fff
+								text-decoration: none
+								+bor-rad(50px)
+								justify-content: center
+								em
+									margin-right: 10px
+									+fz(r(24px))
+								span
+									+fz(r(13px))
+									+fw(700)
+									text-transform: uppercase
+								&.btn-fb
+									background: #415c95
+								&.btn-gg
+									background: #cf493d
+							+media-breakpoint-up(sm)
+								+flex-center()
+								+mar(null -5px)
+								.btn
+									flex-grow: 1
+									+mar(null 5px)
+									+ .btn
+										margin-top: 0
+				.form-checkbox
+					display: flex
+					align-items: baseline
+					label
+						padding-left: 1rem
+						+fz(r(14px))
+			.panel-footer
+				+pad(1rem)
+				background: #f5f5f5
+				display: flex
+				align-items: center
+				+mar(null -1rem)
+				justify-content: space-between
+				a
+					+fz(r(15px))
+					color: #737d83
+					&:nth-child(2)
+						color: #333333
+						text-transform: uppercase
+	+media-breakpoint-up(sm)
+		.login-panel
+			padding: 0
+			.panel
+				.panel-body
+					padding: 30px
+				.panel-footer
+					+mar(null -30px)
+					padding: 15px 30px

@@ -1,0 +1,283 @@
+.wrap-secure
+	padding: 40px 0
+	@media (min-width: 992px)
+		padding: 60px 0
+	.headtitle, .headtitle>*,h1
+		font-size: r(20px)
+		font-weight: 600
+		color: black
+		text-align: center
+		text-transform: uppercase
+		margin-bottom: .8rem
+	.panel
+		width: 400px
+		max-width: 100%
+		margin: auto
+		box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1)
+		background: white
+		padding: 25px
+	.panel-body
+		padding: 1rem 0
+		border-top: 1px solid darken(white,8%)
+	.form-horizontal
+		input[type="text"],input[type="password"], select
+			width: 100%
+			height: 45px
+			border-radius: 22.5px
+			background: darken(white,4%)
+			font-size: 15px
+			border: 0
+			padding-left: 50px
+			font-family: 'Montserrat'
+			&:focus
+				outline: none
+			&:-internal-autofill-selected
+				background-color: darken(white,4%)!important
+			&:placeholder
+				font-family: 'Montserrat'
+		.form-group:not(.forget)
+			position: relative
+			margin-bottom: 16px
+			label:not(.checkbox)
+				font-family: 'Montserrat'
+				font-weight: 400
+				font-size: 0
+				position: absolute
+				top: 15px
+				left: 20px
+				&:before
+					display: flex
+					justify-content: center
+					align-items: center
+					font-size: r(15px)
+					font-family: 'Linearicons-Free'
+		.form-group
+			&.forget
+				position: relative
+				label
+					font-size: r(15px)
+					font-weight: 400
+					color: lighten(black,20%)
+					padding-left: 36px
+					&:before
+						width: 16px
+						height: 16px
+						position: absolute
+						border: 1px solid darken(white,12%)
+						top: 3px
+						left: 0
+						content: ''
+				input
+					display: none
+					&:checked
+						~ label
+							&:before
+								display: flex
+								justify-content: center
+								align-items: center
+								font-family: 'Font Awesome 5 Free'
+								font-weight: 900
+								content: '\f00c'
+			&.btn-login
+				input
+					display: inline-flex
+					justify-content: center
+					align-items: center
+					height: 50px
+					border-radius: 25px
+					min-width: 1px
+					padding: 0 2rem
+					cursor: pointer
+					text-decoration: none
+					text-transform: uppercase
+					background-image: linear-gradient( 90deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+					color: white
+					border: 0
+					width: 100%
+					span
+						color: white
+					@media (max-width: 575px)
+						padding: 0 16px
+						min-width: 120px
+						width: initial
+			&.settingrow
+				label
+					font-size: r(15px)
+					font-weight: 400
+					color: lighten(black,20%)
+					padding-left: 36px
+					&:before
+						width: 16px
+						height: 16px
+						position: absolute
+						border: 1px solid darken(white,12%)
+						top: 3px
+						left: 0
+						content: ''
+					&.active
+						&:before
+							display: flex
+							justify-content: center
+							align-items: center
+							font-family: 'Font Awesome 5 Free'
+							font-weight: 900
+							content: '\f00c'
+				input
+					display: none
+					// &:checked
+					// 	~ label
+					// 		&:before
+					// 			display: flex
+					// 			justify-content: center
+					// 			align-items: center
+					// 			font-family: 'Font Awesome 5 Free'
+					// 			font-weight: 900
+					// 			content: '\f00c'
+
+		.form-input
+			span
+				margin-top: 4px
+				font-family: 'Montserrat'
+				font-size: r(12px)
+				font-weight: 400
+				color: red
+				display: block
+				text-align: right
+				&:before
+					font-family: 'Font Awesome 5 Free'
+					font-weight: 900
+		[id*="mainContent_RegisterUser_CreateUserStepContainer_pnlRequiredProfileProperties"]
+			.form-group:first-child
+				label
+					&:before
+						content: '\e82a'
+			.form-group:nth-child(2)
+				label
+					&:before
+						content: '\e830'
+			.form-group:nth-child(3)
+				label
+					&:before
+						content: '\e834'
+	.btn-default.createuserbutton
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		height: 50px
+		border-radius: 25px
+		min-width: 1px
+		padding: 0 2rem
+		cursor: pointer
+		text-decoration: none
+		text-transform: uppercase
+		background-image: linear-gradient( 90deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+		color: white
+		border: 0
+		width: 100%
+		span
+			color: white
+		@media (max-width: 575px)
+			padding: 0 16px
+			min-width: 120px
+			width: initial
+	&.wrap-login
+		.form-horizontal
+			>.form-group:last-child
+				margin: 0 -25px -40px -25px
+				padding: 20px 25px
+				background: darken(white,4%)
+				display: flex
+				justify-content: space-between
+				a:first-child
+					font-size: r(15px)
+					font-weight: 400
+					color: #737d83
+				a:last-child
+					font-size: 15px
+					font-weight: 400
+					color: lighten(black,20%)
+					text-transform: uppercase
+			>.form-group
+				&:nth-child(1)
+					label
+						top: 12px
+						font-size: 16px
+						i
+							&:before
+								font-weight: 400
+								content: "\e82a"
+								font-family: "Linearicons-Free"
+				&:nth-child(2)
+					label
+						top: 12px
+						font-size: 16px
+						i
+							&:before
+								font-weight: 400
+								content: "\e80f"
+								font-family: "Linearicons-Free"
+	&.wrap-recover
+		.form-horizontal
+			>div
+				>.form-group
+					label
+						font-family: 'Montserrat'
+						font-weight: 400
+						font-size: 0
+						position: absolute
+						top: 15px
+						left: 20px
+						&:before
+							font-size: r(15px)
+							font-family: 'Linearicons-Free'
+							content: '\e818'
+							display: flex
+							justify-content: center
+							align-items: center
+					&:last-child
+						margin-top: 30px
+						input[type="submit"]
+							display: inline-flex
+							justify-content: center
+							align-items: center
+							height: 50px
+							border-radius: 25px
+							min-width: 1px
+							padding: 0 2rem
+							cursor: pointer
+							text-decoration: none
+							text-transform: uppercase
+							background-image: linear-gradient( 90deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+							color: white
+							border: 0
+							width: 100%
+							span
+								color: white
+							@media (max-width: 575px)
+								padding: 0 16px
+								min-width: 120px
+								width: initial
+			.RadCaptcha_Default
+				>div
+					display: flex
+					>p
+						label
+							display: none
+					>div
+						flex: 0 0 195px
+						max-width: 195px
+						display: flex
+						img
+							width: 160px!important
+							height: 45px!important
+						.rcRefreshImage
+							font-size: 0
+							position: relative
+							width: 35px
+							height: 45px
+							&:before
+								position: absolute
+								width: inherit
+								height: inherit
+								content: ''
+								background: url("../img/sync.png") center center no-repeat

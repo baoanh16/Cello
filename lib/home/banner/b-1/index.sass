@@ -1,0 +1,58 @@
+.cello-banner
+	+pad(10px null)
+	.item
+		border: 1px solid #fff
+		box-shadow: 0 0 15px #939393
+		img
+			height: 100%
+			width: 100%
+			object-fit: cover
+	.top-banner
+		height: inherit
+		position: relative
+		.swiper-navigation
+			span
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				cursor: pointer
+				&:focus
+					outline: none
+			.swiper-prev
+				left: 0
+				z-index: 2
+				&:before
+					content: '\f141'
+					color: white
+					font-size: 50px
+					text-shadow: 0 0 10px rgba(0,0,0,.2)
+					font-family: 'Material Design Icons'
+			.swiper-next
+				right: 0
+				z-index: 2
+				&:before
+					content: '\f142'
+					color: white
+					font-size: 50px
+					text-shadow: 0 0 10px rgba(0,0,0,.2)
+					font-family: 'Material Design Icons'
+		.swiper-container
+			height: 100%
+		.swiper-pagination
+			bottom: 12px
+			right: 12px
+			span
+				opacity: 1
+				background: white
+				width: 10px
+				height: 10px
+				border-radius: 50%
+				margin: 0 4px
+				&.swiper-pagination-bullet-active
+					background: #ff6600
+			@media (max-width: 991.9px)
+				right: 50%
+				transform: translateX(50%)
+				
+		.item
+			height: 100%

@@ -1,0 +1,230 @@
+section.checkout.step-1
+	.container
+		.Module
+			.ModuleContent
+				.row.cart-title
+					.col
+						h3
+							span.fas.fa-shopping-cart
+							span Giỏ hàng của bạn (
+							span 6
+							span sản phẩm)
+				.row.cart-table-list
+					.col
+						table
+							thead
+								tr
+									th Sản phẩm
+									th Đơn giá
+									th Số lượng
+									th Thành tiền
+							tbody
+								tr
+									td
+										figure
+											a(href='#')
+												img(src='/Data/Sites/1/Product/748/thumbs/blteen673-xanhduong-(2).jpg')
+											figcaption
+												h4
+													a(href='#') Balo teen Mrvui BLTEEN673
+												p BLTEEN673
+										.removeproduct(onclick='AjaxCart.removefromcart(this);return false;')
+											a
+												span.mdi.mdi-close
+									td
+										.new 370.000 ₫
+									td
+										.quantity.input-number
+											span.minus -
+											input.quantity-number.qty-input(type='text', maxlength='10', onchange='AjaxCart.updatecart();return false;', value='1')
+											span.plus +
+									td 370.000 ₫
+								tr
+									td
+										figure
+											a(href='#')
+												img(src='/Data/Sites/1/Product/746/thumbs/blh661-st-sieunhan-(2).jpg', alt='Balo học sinh Mr Vui BLH661-ST')
+											figcaption
+												h4
+													a(href='#') Balo học sinh Mr Vui BLH661-ST
+												p BLH661-ST
+										.removeproduct(onclick='AjaxCart.removefromcart(this);return false;', data-itemguid='ee62b442-00ff-46d5-bbd3-79d9bcc0448b')
+											a
+												span.mdi.mdi-close
+									td
+										.new 365.000 ₫
+									td
+										.quantity.input-number
+											span.minus -
+											input.quantity-number.qty-input(type='text', maxlength='10', onchange='AjaxCart.updatecart();return false;', name='itemquantityee62b442-00ff-46d5-bbd3-79d9bcc0448b', value='1')
+											span.plus +
+									td 365.000 ₫
+								tr
+									td
+										figure
+											a(href='#')
+												img(src='/Data/Sites/1/Product/701/thumbs/blh611-sg-5congchua.jpg', alt='Ba lô bé gái tiểu học BLH611-SG')
+											figcaption
+												h4
+													a(href='#') Ba lô bé gái tiểu học BLH611-SG
+												p BLH611-SG
+										.removeproduct(onclick='AjaxCart.removefromcart(this);return false;', data-itemguid='3f502dd5-5231-407e-87f9-0ef9d0a0ab62')
+											a
+												span.mdi.mdi-close
+									td
+										.new 315.000 ₫
+									td
+										.quantity.input-number
+											span.minus -
+											input.quantity-number.qty-input(type='text', maxlength='10', onchange='AjaxCart.updatecart();return false;', name='itemquantity3f502dd5-5231-407e-87f9-0ef9d0a0ab62', value='1')
+											span.plus +
+									td 315.000 ₫
+								tr
+									td
+										figure
+											a(href='#')
+												img(src='/Data/Sites/1/Product/747/thumbs/blh661-sg-sofia-(4).jpg', alt='Balo học sinh Mr Vui BLH661-SG')
+											figcaption
+												h4
+													a(href='#') Balo học sinh Mr Vui BLH661-SG
+												p BLH661-SG
+										.removeproduct(onclick='AjaxCart.removefromcart(this);return false;', data-itemguid='568ce6bb-c570-4e60-a006-eba8715b5f52')
+											a
+												span.mdi.mdi-close
+									td
+										.new 365.000 ₫
+									td
+										.quantity.input-number
+											span.minus -
+											input.quantity-number.qty-input(type='text', maxlength='10', onchange='AjaxCart.updatecart();return false;', name='itemquantity568ce6bb-c570-4e60-a006-eba8715b5f52', value='3')
+											span.plus +
+									td 1.095.000 ₫
+				.row.cart-total-price
+					.col
+						p
+							span Tạm tính: 
+							strong.price-temp 2.145.000 ₫
+						p
+							span Phí vận chuyển:
+							strong.price-shipping 0 ₫
+						p
+							span Giảm giá:
+							strong.price-reduce 0 ₫
+						p
+							span Tổng tiền:
+							strong 2.145.000 ₫
+						p Giá chưa bao gồm VAT
+				.cart-button-checkout
+					a.btn.btn-prev(href='/')
+						span.mdi.mdi-chevron-left
+						span Tiếp tục mua hàng
+					a.btn.btn-next(onclick="setLocation('/dang-nhap');return false;")
+						span Tiến hành thanh toán
+						span.mdi.mdi-chevron-right
+	.container.viewed-product.Module.Module-277
+		.ModuleContent
+			.row.cart-title
+				.col
+					h3
+						span.far.fa-clock
+						span Sản phẩm đã xem
+			.swiper-container.swiper-container-horizontal
+				.swiper-button-prev.swiper-button-disabled(tabindex='0', role='button', aria-label='Previous slide', aria-disabled='true')
+					span.lnr.lnr-chevron-left
+				.swiper-button-next(tabindex='0', role='button', aria-label='Next slide', aria-disabled='false')
+					span.lnr.lnr-chevron-right
+				.swiper-wrapper(style='transform: translate3d(0px, 0px, 0px);')
+					.swiper-slide.swiper-slide-active(style='width: 262.5px; margin-right: 20px;')
+						figure.mrVui-product-item
+							.imgbox
+								a(href='#')
+									img(src='/Data/Sites/1/Product/748/blteen673-xanhduong-(2).jpg')
+							figcaption
+								h4
+									a(href='#') Balo teen Mrvui BLTEEN673
+								p.code BLTEEN673
+								p
+									span.price 370.000 ₫
+									del.old-price 398.000 ₫
+							.shopping-button-wrapper
+								.btn.add-wishlist
+									span.lnr.lnr-heart
+									span Yêu Thích
+								.btn.add-cart(onclick='AjaxCart.addproducttocart_catalog(this);return false;', data-productid='748')
+									span.lnr.lnr-cart
+									span Mua ngay
+							span.promotion.gradient_1
+								| 7%
+					.swiper-slide.swiper-slide-next(style='width: 262.5px; margin-right: 20px;')
+						figure.mrVui-product-item
+							.imgbox
+								a(href='#')
+									img(src='/Data/Sites/1/Product/747/blh661-sg-sofia-(4).jpg', alt='Balo học sinh Mr Vui BLH661-SG')
+							figcaption
+								h4
+									a(href='#') Balo học sinh Mr Vui BLH661-SG
+								p.code BLH661-SG
+								p
+									span.price 365.000 ₫
+							.shopping-button-wrapper
+								.btn.add-wishlist
+									span.lnr.lnr-heart
+									span Yêu Thích
+								.btn.add-cart(onclick='AjaxCart.addproducttocart_catalog(this);return false;', data-productid='747')
+									span.lnr.lnr-cart
+									span Mua ngay
+					.swiper-slide(style='width: 262.5px; margin-right: 20px;')
+						figure.mrVui-product-item
+							.imgbox
+								a(href='#')
+									img(src='/Data/Sites/1/Product/746/blh661-st-sieunhan-(2).jpg', alt='Balo học sinh Mr Vui BLH661-ST')
+							figcaption
+								h4
+									a(href='#') Balo học sinh Mr Vui BLH661-ST
+								p.code BLH661-ST
+								p
+									span.price 365.000 ₫
+							.shopping-button-wrapper
+								.btn.add-wishlist
+									span.lnr.lnr-heart
+									span Yêu Thích
+								.btn.add-cart(onclick='AjaxCart.addproducttocart_catalog(this);return false;', data-productid='746')
+									span.lnr.lnr-cart
+									span Mua ngay
+					.swiper-slide(style='width: 262.5px; margin-right: 20px;')
+						figure.mrVui-product-item
+							.imgbox
+								a(href='http://preview6308.canhcam.com.vn/balo-hoc-sinh-mr-vui-blh667-st')
+									img(src='/Data/Sites/1/Product/745/blh667-xanhduong-(2).jpg', alt='Balo học sinh Mr Vui BLH667-ST')
+							figcaption
+								h4
+									a(href='http://preview6308.canhcam.com.vn/balo-hoc-sinh-mr-vui-blh667-st') Balo học sinh Mr Vui BLH667-ST
+								p.code BLH667-ST
+								p
+									span.price 349.000 ₫
+							.shopping-button-wrapper
+								.btn.add-wishlist
+									span.lnr.lnr-heart
+									span Yêu Thích
+								.btn.add-cart(onclick='AjaxCart.addproducttocart_catalog(this);return false;', data-productid='745')
+									span.lnr.lnr-cart
+									span Mua ngay
+					.swiper-slide(style='width: 262.5px; margin-right: 20px;')
+						figure.mrVui-product-item
+							.imgbox
+								a(href='http://preview6308.canhcam.com.vn/balo-be-gai-tieu-hoc-blh660-sg')
+									img(src='/Data/Sites/1/Product/743/blh660-sg-sofia-(2).jpg', alt='Balo bé gái tiểu học BLH660-SG')
+							figcaption
+								h4
+									a(href='http://preview6308.canhcam.com.vn/balo-be-gai-tieu-hoc-blh660-sg') Balo bé gái tiểu học BLH660-SG
+								p.code BLH660-SG
+								p
+									span.price 365.000 ₫
+							.shopping-button-wrapper
+								.btn.add-wishlist
+									span.lnr.lnr-heart
+									span Yêu Thích
+								.btn.add-cart(onclick='AjaxCart.addproducttocart_catalog(this);return false;', data-productid='743')
+									span.lnr.lnr-cart
+									span Mua ngay
+				span.swiper-notification(aria-live='assertive', aria-atomic='true')

@@ -1,0 +1,17 @@
+.cello-banner-2
+	// background: #f7f7f7
+	.item
+		.img
+			+bor-rad(10px)
+			height: 100%
+			overflow: hidden
+			img
+				height: 100%
+				object-fit: cover
+				width: 100%
+		+ .item
+			margin-top: r(10px)
+	+media-breakpoint-up(lg)
+		.item
+			+ .item
+				margin-top: 0

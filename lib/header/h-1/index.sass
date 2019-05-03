@@ -1,0 +1,602 @@
+.cello-header
+	+pos(fixed, 0 null null 0)
+	width: 100%
+	z-index: 100
+	background: #fff
+	.top-nav
+		border-bottom: 1px solid #e9e9e9
+		.main-nav
+			+pad(.5rem null)
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+			.navbar-brand
+				display: flex
+				width: 100%
+				justify-content: space-between
+				align-items: center
+				@media (max-width: 991.98px)
+					justify-content: flex-start
+					.toggle-button
+						order: 1
+					#search
+						order: 2
+						margin-left: 15px
+					.sitelogo
+						order: 3
+						margin: 0 auto
+						@media (max-width: 991.98px)
+							img
+								max-width: 70px
+					#login
+						order: 4
+						margin-left: 40px
+						margin-right: 0
+				.toggle-button
+					width: 2rem
+					height: 2rem
+					+flex-center()
+					.button
+						height: 2px
+						width: 30px
+						background: #333
+						position: relative
+						transition: all 0ms 300ms
+						&:after
+							content: ""
+							position: absolute
+							left: 0
+							width: 100%
+							height: 100%
+							bottom: 8px
+							background: #333
+							transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+						&:before
+							content: ""
+							position: absolute
+							left: 0
+							width: 100%
+							height: 100%
+							top: 8px
+							background: #333
+							transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+						&.active
+							background: transparent
+							&:before
+								top: 0
+								transform: rotate(45deg)
+								transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+							&:after
+								bottom: 0
+								transform: rotate(-45deg)
+								transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+			#login
+				@media (min-width: 992px)
+					display: none
+					.log-in
+						ul
+							li
+								+ li
+									&:before
+										content: none
+				@media (max-width: 991.9px)
+					margin-right: 1rem
+					position: relative
+					height: 44px
+					width: 30px
+					display: flex
+					align-items: center
+					justify-content: center
+					.log-in
+						+fz(r(13px))
+						position: absolute
+						width: max-content
+						padding: 1rem
+						z-index: 2
+						box-shadow: 0 0 5px rgba(0,0,0,.15)
+						background: white
+						display: none
+						top: 100%
+						right: 0
+						ul
+							display: flex
+							li
+								display: flex
+								align-items: center
+								padding: 0 7px
+								+ li
+									border-left: 1px solid #333
+									&:before
+										content: none
+						a
+							margin-left: .5rem
+							font-family: 'Montserrat', sans-serif
+							font-weight: 400
+							text-decoration: none
+							display: flex
+							align-items: center
+							color: #333
+							+tran(.4s)
+							&:hover
+								color: $main
+							em
+								margin-right: .5rem
+			#search
+				display: none
+				@media (max-width: 991.9px)
+					margin-left: auto
+					margin-right: 1rem
+					position: relative
+					height: 44px
+					width: 30px
+					display: flex
+					align-items: center
+					justify-content: center
+			.navbar-main
+				width: 100%
+				.top-main
+					background: white
+					+pos(fixed, null null null -100%)
+					transition: .4s all ease-in-out
+					// height: 100%
+					bottom: 0
+					+pad(1rem null)
+					width: calc(100% - 5rem)
+					+fz(r(13px))
+					z-index: 32
+					@media (max-width: 991.98px)
+						overflow: auto
+					&.active
+						left: 0
+					.list-item
+						+flex-center()
+						border-bottom: 1px solid rgba(0,0,0,.2)
+						padding-bottom: 1rem
+						@media (max-width: 991.98px)
+							flex-wrap: wrap
+							justify-content: flex-start
+						.item
+							+pad(null 1rem)
+							text-align: center
+							@media (max-width: 991.98px)
+								padding: 0 5px
+							+ .item
+								.IME-dropdown
+									display: none
+									position: absolute
+									width: 200px
+									background: white
+									padding: 15px
+									text-align: left
+									border: 1px solid rgba(0,0,0,.15)
+									@media (max-width: 991.9px)
+										right: 0
+									.form-group
+										margin-bottom: 15px
+									label
+										font-size: 12px
+										margin: 0
+										margin-bottom: 6px
+									input
+										border: 0
+										border-bottom: 1px solid rgba(0,0,0,.2)
+										&:focus
+											outline: none
+									a.check-order-button
+										display: block
+										font-size: .8125rem
+										font-weight: 400
+										height: 35px
+										line-height: 35px
+										border-radius: 50px
+										text-align: center
+										color: #fff
+										background: map-get($mau, main)
+										border: none
+										width: 100%
+										box-shadow: 0 10px 20px -10px map-get($mau, main)
+					em
+						// display: none
+						+fz(r(16px))
+						margin-right: .5rem
+					a
+						text-decoration: none
+						display: flex
+						align-items: center
+						color: #333333
+						+tran(.4s)
+						@media (max-width: 991.98px)
+							font-size: 11px
+					.log-in
+						margin-left: auto
+						display: flex
+				.search-main
+					padding-top: .5rem
+					@media (max-width: 991.9px)
+						display: none
+					.searchbox
+						display: flex
+						width: 100%
+						background: #f5f5f5
+						border-radius: 50px
+						input
+							+pad(.5rem 1rem)
+							width: 100%
+							background: none
+							+fz(r(13px))
+							color: #999999
+							border: 0
+						button
+							background: none
+							border: 0
+							+pad(null 1rem)
+							font-size: 0
+							&:before
+								+fz(r(18px))
+								color: lighten(black,20%)
+								content: '\f002'
+								font-family: 'Font Awesome 5 Free'
+								font-weight: 900
+							// em
+						input, button
+							&:focus
+								outline: none
+			.navbar-menu
+				// margin-left: auto
+				// flex: 0 0 33.3333%
+				max-width: 5rem
+				background: rgba(0,0,0,.4)
+				+pad(.5rem)
+				+pos(fixed, null -100% null null)
+				flex-direction: column
+				display: flex
+				height: 100%
+				+fz(r(12px))
+				transition: .4s all ease-in-out
+				z-index: 33
+				&.active
+					right: 0
+				.item
+					+pad(1rem null)
+					// flex: 0 0 25%
+					// height: 100%
+					a
+						color: #fff
+						text-decoration: none
+						figure
+							text-align: center
+							margin-bottom: 0
+							.icon
+								img
+									filter: brightness(0) invert(1)
+									max-height: 30px
+							figcaption
+								padding-top: .5rem
+								p
+									margin-bottom: 0
+									span
+										+fw(600)
+	+media-breakpoint-up(sm)
+		.top-nav
+			.main-nav
+				.navbar-main
+					.top-main
+						width: auto
+						left: auto
+						right: -100%
+						&.active
+							transition-delay: .1s
+							left: auto
+							right: 5rem
+	+media-breakpoint-up(lg)
+		.top-nav
+			height: 100px
+			display: flex
+			align-items: center
+			.main-nav
+				flex-wrap: nowrap
+				.navbar-brand
+					flex: 0 0 16.6666%
+					width: auto
+					.toggle-button
+						display: none
+				.navbar-main
+					padding-right: 2rem
+					flex: 0 0 50%
+					.top-main
+						background: none
+						top: auto
+						right: auto
+						display: flex
+						width: auto
+						position: relative
+						+pad(0)
+						.list-item
+							border: 0
+							padding-bottom: 0
+							.item
+								+pad(0)
+								+ .item
+									margin-left: 1.5rem
+									position: relative
+									&:before
+										content: ''
+										height: 10px
+										width: 1px
+										background: #cccccc
+										transform: translateY(-50%)
+										+pos(abs, 50% null null -.75rem)
+								a
+									color: #333
+									em
+										display: inline-block
+									&:hover
+										color: $main
+						.log-in
+							ul
+								display: flex
+								li
+									display: flex
+									align-items: center
+									+ li
+										&:before
+											content: none
+							a
+								font-family: 'Montserrat', sans-serif
+								font-weight: 400
+								margin-left: .5rem
+								color: #333
+								em
+									display: inline-block
+								&:hover
+									color: $main
+				.navbar-menu
+					padding: 0
+					background: none
+					top: auto
+					right: auto
+					max-width: initial
+					width: 100%
+					position: relative
+					flex-direction: row
+					.item
+						+pad(0)
+						flex-basis: 0
+						flex-grow: 1
+						max-width: 100%
+						border-left: 1px dashed #e5e5e5
+						a
+							color: #333
+							figure
+								.icon
+									img
+										filter: initial
+										// max-height: 50px
+								figcaption
+									p
+										span
+											color: #ff6600
+						position: relative
+						&:after
+							content: ''
+							width: 0
+							+tran(.4s)
+							height: 2px
+							background: #343434
+							+pos(abs, null null -1rem 50%)
+							transform: translateX(-50%)
+
+					.Module-206
+						flex: 0 0 75%
+						.ModuleContent
+							display: flex
+							flex-wrap: wrap
+					.Module-210
+						flex: 0 0 25%
+						.ModuleContent
+							display: flex
+								flex-wrap: wrap
+	.bottom-nav
+		border-bottom: 1px solid #e9e9e9
+		@media (min-width: 992px)
+			height: 50px
+			display: flex
+			align-items: center
+		.nav
+			position: relative
+			display: flex
+			align-items: center
+			.nav-item
+				flex-grow: 1
+				// p.navosition: relative
+				text-transform: uppercase
+				+fw(700)
+				+pad(1rem null)
+				+fz(r(13px))
+				.nav-link
+					color: #333
+					display: block
+					position: relative
+					+tran(.4s)
+					text-decoration: none
+					cursor: pointer
+					img
+						margin-right: .5rem
+						height: 24px
+					&:after
+						content: ''
+						width: 0
+						+tran(.4s)
+						height: 2px
+						background: #343434
+						+pos(abs, null null 0px 50%)
+						transform: translateX(-50%)
+					&:before
+						content: ''
+						width: 0
+						display: none
+						height: 0 
+						border-left: 5px solid transparent
+						border-right: 5px solid transparent
+						transform: translateX(-50%)
+						border-bottom: 5px solid black
+						+pos(abs, null null 2px 50%)
+				&.active, &:hover
+					.nav-link
+						color: #ff6801
+						&:after
+							background: #ff6801
+							width: 100%
+						// &:before
+						// 	border-bottom: 5px solid #ff6801
+						// 	display: block
+				&.active-mega
+					.nav-link
+						&:before
+							display: block
+						&:after
+							width: 100%
+							background: black
+				.cello-mega
+					display: none
+					+pos(abs, calc(100%) null null 0)
+					+pad(r(32px) r(16px))
+					width: 100%
+					z-index: 35
+					background: rgba(255,255,255,.98)
+					box-shadow: 0 0 5px rgba(0,0,0,.15)
+					&.active-mega
+						display: block
+						box-shadow: 0 8px 10px rgba(0,0,0,.2)
+					.mega-list
+						.list-item
+							+mar(null -5px)
+							display: flex
+							flex-wrap: wrap
+							.item
+								+mar(null 5px)
+								overflow: hidden
+								border: 1px solid #666666
+								border-radius: 50px
+								flex: 0 0 calc(25% - 10px)
+								display: flex
+								align-items: center
+								margin-bottom: 10px
+								a
+									+tran(.4s)
+									width: 100%
+									+pad(.45rem .5rem)
+									display: flex
+									align-items: center
+									+fw(400)
+									height: 100%
+									color: #666666
+									img
+									span
+										margin-left: r(10px)
+										+fz(r(11px))
+								&:hover, &.active
+									a
+										text-decoration: none
+										background: #343434
+										color: #fff
+						.list-brand
+							.brand-item
+								display: none
+								margin-top: r(40px)
+								flex-wrap: wrap
+								// display: flex
+								&.active
+									display: flex
+								.item
+									flex: 0 0 25%
+									+pad(0 r(10px))
+									text-align: center
+									margin-bottom: r(35px)
+									a
+										display: block
+										img
+											+tran(.4s)
+											filter: grayscale(100%) contrast(25%)
+									&:hover
+										a
+											img
+												filter: initial
+												
+		+media-breakpoint-up(lg)
+			.container
+				height: 100%
+				.Module,.ModuleContent
+					height: 100%
+			.nav
+				height: 100%
+				.nav-item
+					padding: 0
+					height: 100%
+					.nav-link
+						display: flex
+						justify-content: center
+						align-items: center
+						flex-wrap: wrap
+						height: 100%
+		// +media-breakpoint-up(xl)
+		// 	.nav
+		// 		.nav-item
+		// 			.nav-link
+		// 				display: flex
+	#list-nav
+		.nav
+			flex-direction: column
+			+pad(1rem)
+			position: relative
+			.nav-item
+				a
+					+pad(10px null)
+					text-transform: uppercase
+					text-decoration: none
+					color: #333333
+					+fw(700)
+					+fz(r(13px))
+					display: flex
+					align-items: center
+					img
+						// filter: brightness(0) invert(1)
+						margin-right: .5rem
+			.cello-mega
+				display: none
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background: white
+				>.row
+					margin: 0
+				.col-lg-3
+					display: none
+				.col-lg-9
+					padidng: 0 0
+				.mdi-close
+					font-size: 26px
+				@media (max-width: 991.98px)
+					.list-brand
+						.brand-item
+							display: flex
+							flex-wrap: wrap
+						.item
+							flex: 0 0 33.3333%
+							max-width: 33.3333%
+							padding: 0 5px
+							img
+								max-width: 100%
+
+					
+	.header-bg
+		background: rgba(0,0,0,.7)
+		+pos(fixed, null null null -100%)
+		+tran(.4s)
+		width: 100%
+		height: 100%
+		z-index: 29
+		&.active
+			left: 0

@@ -1,0 +1,30 @@
+.pagination
+	justify-content: center
+	margin-bottom: 0
+	margin-top: 1rem
+	display: flex
+	align-items: center
+	list-style: none
+	li
+		+mar(null 5px)
+		cursor: pointerx
+		transition: .3s all ease-in-out
+		a,span
+			width: 40px
+			height: 40px
+			+lh(40px)
+			text-align: center
+			+bor-rad(50%)
+			text-decoration: none
+			display: block
+			+fz(r(14px))
+			color: #999999
+			&.NextPage, &.LastPage, &.BackPage, &.FirstPage
+				background: rgb(255, 255, 255)
+				box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1)
+				+fz(r(15px))
+				+bor-rad(50%)
+		&.active, &:hover
+			span, a
+				color: #fff
+				background: linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)

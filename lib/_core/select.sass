@@ -1,0 +1,53 @@
+.select
+	+fz(r(15px))
+	+fw(400)
+	cursor: pointer
+	user-select: none
+	position: relative
+	.select-show
+		background: #fff
+		+bor-rad(50px)
+		+pad(.3rem 1rem)
+		+tran(.2s)
+		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1)
+		position: relative
+		&:after
+			+lnr('\e874')
+			+tran(.2s)
+			+pos(abs, 50% 1rem null null)
+			transform: translateY(-50%)
+			+fz(r(12px))
+			color: #999999
+		&.active
+			background: #ff6600
+			color: #fff
+			box-shadow: none
+			&:after
+				color: #ffffff
+				transform: translateY(-50%) rotate(180deg)
+	.select-list
+		display: none
+		width: 100%
+		box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3)
+		z-index: 10
+		+pos(abs, calc(100% + 10px) null null 0)
+		background: #fff
+		+pad(r(15px))
+		border-top: 2px solid #343434
+		&:after
+			content: ''
+			width: 0
+			height: 0 
+			border-left: 5px solid transparent
+			border-right: 5px solid transparent
+			border-bottom: 5px solid #343434
+			+pos(abs, null null calc(100% + 2px) 50%)
+			transform: translateX(-50%)
+		.select-item
+			+ .select-item
+				margin-top: r(10px)
+			&.active
+				+fw(700)
+				color: #ff6600
+	+media-breakpoint-up(sm)
+		min-width: 200px

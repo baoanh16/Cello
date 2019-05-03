@@ -1,0 +1,87 @@
+section.cello-spList
+	.container
+		.filter-nav
+			.filter
+				select
+					option Giá
+					option Nổi bật
+					option Giá từ thấp đến cao
+					option Giá từ cao đến thấp
+				select
+					option Giá
+					option Nổi bật
+					option Giá từ thấp đến cao
+					option Giá từ cao đến thấp
+			.sort
+				select
+					option Nổi bật
+					option Giá từ thấp đến cao
+					option Giá từ cao đến thấp
+		.cello-tabContent
+			.row.list-item.no-gutters(cello-tabContent='1').active
+				-for(i=0;i<40; i++)
+					.col-xl-item.col-sm-6.col-md-4.col-lg-3.productItem
+						a(href="#")
+							.top-item
+								.img
+									img(src="./img/home/item-5.png", alt="")
+								.pro
+									span -15%
+								.gift
+									em.fas.fa-gift
+									span Quà tặng
+								.status.stt-2
+									span New
+								.sale.sl-1
+									span SALE CỰC SỐC
+							.bottom-item
+								.name
+									h5 LOA HARMAN/KARDON ONYX STUDIO 5 (XÁM)
+								.price
+									.old
+										span 3.680.000Đ
+									.new
+										span 2.880.000Đ
+							.gift-detail
+								.detail-wrapper
+									.detail-title
+										h5 Quà tặng kèm
+										.detail-close
+											em.mdi.mdi-close
+									.detail-info
+										p PMH 500.000đ (Trừ trực tiếp vào giá)
+										p Tặng tai nghe Bluetooth Samsung Level U Pro (EO-BN920) trị giá 150.000đ)
+										p Áp dụng từ 24/12/2018 đến 31/12/2018 
+										p Số lượng quà tặng có hạn!
+				.col-xl-item.col-sm-6.col-md-4.col-lg-3.productItem
+					a(href="#")
+						.top-item
+							.img
+								img(src="./img/home/item-5.png", alt="")
+							.pro
+								span -15%
+							.method
+								span đặt hàng trước
+							.status
+								span New
+						.bottom-item
+							.name
+								h5 LOA HARMAN/KARDON ONYX STUDIO 5 (XÁM)
+							.price
+								.old
+									span 3.680.000Đ
+								.new
+									span 2.880.000Đ
+						.gift-detail
+							.detail-wrapper
+								.detail-title
+									h5 Quà tặng kèm
+									.detail-close
+										em.mdi.mdi-close
+								.detail-info
+									p PMH 500.000đ (Trừ trực tiếp vào giá)
+									p Tặng tai nghe Bluetooth Samsung Level U Pro (EO-BN920) trị giá 150.000đ)
+									p Áp dụng từ 24/12/2018 đến 31/12/2018 
+									p Số lượng quà tặng có hạn!
+		.cello-viewMore
+			a(href="javascript:void(0)") Xem thêm

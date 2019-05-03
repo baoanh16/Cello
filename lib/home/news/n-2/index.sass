@@ -1,0 +1,61 @@
+.cello-news
+	+pad(r(30px) null)
+	+media-breakpoint-up(lg)
+		+pad(r(50px) null)
+	background: white
+	.item
+		a
+			text-decoration: none
+			figure
+				.img
+					+bor-rad(5px)
+					overflow: hidden
+					img
+						width: 100%
+						+tran(.4s)
+				figcaption
+					padding-top: 10px
+					time
+						color: #c5c5c5
+						+fz(r(13px))
+						&:before
+							content: '\f133'
+							font-family: "Font Awesome 5 Free"
+							+fw(900)
+							margin-right: 10px
+					h5
+						padding-top: 10px
+						+fz(r(16px))
+						+fw(500)
+						color: #333333
+				&:hover
+					.img
+						img
+							transform: scale(1.1)
+	.part-news
+		padding-top: 1.5rem
+		+media-breakpoint-up(lg)
+			padding-top: 0
+		.item
+			a
+				figure
+					display: flex
+					height: 100%
+					align-items: center
+					@media (max-width: 991.98px)
+						flex-direction: column
+					.img
+						// +media-breakpoint-up(md)
+						// 	display: flex
+						// 	height: 100%
+						flex: 0 0 40%
+						img
+							object-fit: cover
+					figcaption
+						padding-top: 0
+						padding-left: 10px
+						h5
+							display: -webkit-box
+							-webkit-box-orient: vertical
+							-webkit-line-clamp: 3
+							overflow: hidden

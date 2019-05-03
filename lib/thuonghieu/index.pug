@@ -1,0 +1,43 @@
+section.cello-thuonghieu
+	.container
+		.cello-title
+			h2 thương hiệu
+		.cello-navTab
+			.cello-mbTab Danh sách
+			ul.cello-tabList
+				li.item.active(cello-tabItem='1') Âm thanh
+				li.item(cello-tabItem='2') Tai nghe
+				li.item(cello-tabItem='3') Thiết bị đeo tay
+				li.item(cello-tabItem='4') Camera
+				li.item(cello-tabItem='5') Phụ kiện
+		.cello-tabContent
+			.row.list-item.no-gutters(cello-tabContent='1').active
+				-for(i=0;i<15;i++)
+					.col-xl-item.col-sm-6.col-md-4.col-lg-3.item
+						.top-item
+							.img
+								img(src='./img/thuonghieu/'+ (i+1) +'.png', alt="")
+			.row.list-item.no-gutters(cello-tabContent='2')
+				-for(i=0;i<13;i++)
+					.col-xl-item.col-sm-6.col-md-4.col-lg-3.item
+						.top-item
+							.img
+								img(src='./img/thuonghieu/'+ (i+1) +'.png', alt="")
+			.row.list-item.no-gutters(cello-tabContent='3')
+				-for(i=0;i<11;i++)
+					.col-xl-item.col-sm-6.col-md-4.col-lg-3.item
+						.top-item
+							.img
+								img(src='./img/thuonghieu/'+ (i+1) +'.png', alt="")
+			.row.list-item.no-gutters(cello-tabContent='4')
+				-for(i=0;i<9;i++)
+					.col-xl-item.col-sm-6.col-md-4.col-lg-3.item
+						.top-item
+							.img
+								img(src='./img/thuonghieu/'+ (i+1) +'.png', alt="")
+			.row.list-item.no-gutters(cello-tabContent='5')
+				-for(i=0;i<6;i++)
+					.col-xl-item.col-sm-6.col-md-4.col-lg-3.item
+						.top-item
+							.img
+								img(src='./img/thuonghieu/'+ (i+1) +'.png', alt="")

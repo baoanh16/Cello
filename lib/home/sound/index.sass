@@ -1,0 +1,128 @@
+.cello-sound
+	
+	+pad(r(30px) null)
+	+media-breakpoint-up(lg)
+		+pad(r(50px) null)
+	.content
+		+bor-rad(20px)
+		overflow: hidden
+		background: #f7f7f7
+		box-shadow: 0 0 8px rgba(0,0,0,.1)
+		+ .content
+			margin-top: 20px
+		.left-content
+			.title
+				+pad(1rem)
+				text-align: center
+				color: #fff
+				h4
+					+fw(500)
+					+fz(r(18px))
+					text-transform: uppercase
+			.swiper-container
+				+pad(1rem)
+				.swiper-wrapper
+					.swiper-slide
+						text-align: center
+						.item
+							text-align: center
+							// +pad(1rem)
+							transition: all .3s ease-out
+							a
+								display: flex
+								justify-content: center
+								align-items: center
+								height: 100%
+								width: 100%
+								padding: 1rem
+							&:hover
+								box-shadow: 0 0 7px #e3dcdc
+								background: white
+				.swiper-next
+					text-align: center
+					em
+						+fz(r(20px))
+						color: #999999
+		.right-content
+			.title
+				display: none
+			.swiper-container
+				background: white
+				+pad(1rem 2rem)
+				.swiper-wrapper
+					.swiper-slide
+						a
+							text-decoration: none
+						figure
+							margin-bottom: 0
+							.img
+								text-align: center
+							figcaption
+								+fz(r(18px))
+								padding-top: 1rem
+								.name
+									h5
+										+fz(r(15px))
+										text-transform: uppercase
+										+fw(500)
+										color: #333
+										height: 45px
+										overflow: hidden
+								.price
+									margin-top: 8px
+									color: #ff6600
+									p
+										+fz(r(18px))
+										color: #ff6600
+				.swiper-pagination
+					margin-top: 1.2rem
+					position: relative
+					.swiper-pagination-bullet
+						background: none
+						border: 1px solid #1e1c1c
+						&.swiper-pagination-bullet-active
+							background: #ff6600
+							border: 0
+	+media-breakpoint-up(lg)
+		.content
+			.right-content
+				.title
+					background: #e5e5e5
+					display: flex
+					justify-content: flex-end
+					a
+						text-decoration: none
+						+fw(400)
+						color: #999999
+						display: inline-flex
+						align-items: center
+						+fz(r(16px))
+						em
+							margin-left: .35rem
+							+fz(r(14px))
+				.swiper-container
+					display: flex
+					align-items: center
+					height: calc(100% - 60px)
+					.swiper-wrapper
+						.swiper-slide
+							display: flex
+							figure
+								display: flex
+								align-items: center
+								height: 100%
+								figcaption
+									padding-top: 0
+									padding-left: 1rem
+									flex: 0 0 50%
+									.name
+										h5
+											+fz(r(18px))
+											height: 54px
+											overflow: hidden
+					.swiper-pagination
+						+pos(abs, null null 1rem null)
+			.title
+				+pad(1rem)
+				height: 60px
+				+flex-center()
