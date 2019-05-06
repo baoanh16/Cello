@@ -74,7 +74,7 @@
 				<div class="bottom-item">
 					<div class="name">
 						<h5>
-							<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of> (XÁM)
+							<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
 						</h5>
 					</div>
 					<div class="price">

@@ -1,8 +1,5 @@
 .cello-product, .cello-khuyenmai, .cello-spList,.cello-thuonghieu, .cello-thuonghieu-ct
-	+pad(r(30px) null)
-	// background: #f7f7f7
-	+media-breakpoint-up(lg)
-		+pad(r(50px) null r(35px) null)
+	@media (min-width: 992px)
 		.cello-title
 			margin-bottom: 0
 	a
@@ -32,6 +29,7 @@
 					border-radius: 15px
 					align-items: center
 					font-weight: 300
+					background: #f7f7f7
 				&.active, &:hover
 					a
 						color: #2eb135
@@ -45,7 +43,6 @@
 					a
 						font-size: 12px
 						min-width: 1px
-						background: #f7f7f7
 					&.active, &:hover
 						a
 							background: #ff6600
