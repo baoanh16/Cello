@@ -26,7 +26,11 @@
 						</table>
 					</xsl:when>
 					<xsl:when test="/ProductDetail/Description != ''">
-						<xsl:value-of select="/ProductDetail/Description" disable-output-escaping="yes"></xsl:value-of>
+						<div class="product-description">
+							<div class="content">
+								<xsl:value-of select="/ProductDetail/Description" disable-output-escaping="yes"></xsl:value-of>
+							</div>
+						</div>
 					</xsl:when>
 				</xsl:choose>
 			</div>

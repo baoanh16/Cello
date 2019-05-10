@@ -133,7 +133,9 @@
 									</span>
 								</div>
 
-								<div class="tr">
+								<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes">
+								</xsl:value-of>
+								<!-- <div class="tr">
 									<span>Bộ sản phẩm</span>
 									<span>Loa , Hộp, Adapter, Dây Sạc, Sách Hướng Dẫn, Phiếu bảo hành </span>
 								</div>
@@ -141,10 +143,9 @@
 									<span>Bảo hàng</span>
 									<p>
 										<span>12 Tháng Chính Hãng</span>
-										<a href="#" id="btn-showManufacturerDescription">Tìm trung tâm bảo hành</a>
-
+										<a href="#">Tìm trung tâm bảo hành</a>
 									</p>
-								</div>
+								</div> -->
 							</div>
 							<div class="productButton">
 								<xsl:choose>
@@ -235,13 +236,15 @@
 		<div class="productDetail-2">
 			<div class="row">
 				<div class="col-lg-8">
-					<div class="product-description">
-						<div class="blockTitle">Mô tả sản phẩm</div>
-						<div class="content">
-							<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes">
-							</xsl:value-of>
+					<xsl:if test="/ProductDetail/FullContent !=''">
+						<div class="product-description">
+							<div class="blockTitle">Mô tả sản phẩm</div>
+							<div class="content">
+								<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes">
+								</xsl:value-of>
+							</div>
 						</div>
-					</div>
+					</xsl:if>
 					<xsl:if test="count(/ProductDetail/ProductVideos) > 0">
 						<div class="video">
 							<div class="blockTitle">Video</div>
@@ -327,22 +330,23 @@
 				</xsl:if>
 			</div>
 		</div>
-												<xsl:if test="/ProductDetail/ManufacturerDescription != ''">
-											<div class="term-content">
-												<div class="container">
-													<div class="body">
-														<div class="title">
-															<div class="btn-close">
-																<span class="mdi mdi-close"></span>
-															</div>
-														</div>
-														<div class="content">
-														<xsl:value-of select="/ProductDetail/ManufacturerDescription" disable-output-escaping="yes" />
-														</div>
-													</div>
-												</div>
-											</div>
-										</xsl:if>
+		<xsl:if test="/ProductDetail/ManufacturerDescription != ''">
+			<div class="term-content">
+				<div class="container">
+					<div class="body">
+						<div class="title">
+							<div class="btn-close">
+								<span class="mdi mdi-close"></span>
+							</div>
+						</div>
+						<div class="content">
+							<xsl:value-of select="/ProductDetail/ManufacturerDescription"
+								disable-output-escaping="yes" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="ProductImages" mode="Big">
@@ -984,5 +988,5 @@
 			<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
 		</a>
 	</xsl:template>
-	
+
 </xsl:stylesheet>

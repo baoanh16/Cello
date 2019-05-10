@@ -105,27 +105,4 @@
 			</div>
 		</div>
 	</xsl:template>
-	
-	<xsl:template match="ProductColorImage">
-		<a>
-			<xsl:attribute name="href">
-				<xsl:value-of select="ProductUrl" disable-output-escaping="yes"></xsl:value-of>
-			</xsl:attribute>
-			<div class="color-item">
-				<xsl:if test="position() = 1">
-					<xsl:attribute name="class">
-						<xsl:text>color-item active</xsl:text>
-					</xsl:attribute>
-				</xsl:if>
-				<img>
-				<xsl:attribute name="src">
-					<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
-				</xsl:attribute>
-				<xsl:attribute name="alt">
-					<xsl:value-of select="ProductTitle"></xsl:value-of>
-				</xsl:attribute>
-				</img>
-			</div>
-		</a>
-	</xsl:template>
 </xsl:stylesheet>

@@ -142,7 +142,7 @@
 					<xsl:if test="Percent != ''">
 						<div class="pro">
 							<span>-</span>
-							<xsl:value-of select="Percent" />
+							<xsl:value-of select="Percent" />%
 						</div>
 					</xsl:if>
 					<xsl:if test="floor(ShowOption div 1) mod 2 = 1">
