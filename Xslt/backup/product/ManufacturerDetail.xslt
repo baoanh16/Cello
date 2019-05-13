@@ -98,16 +98,13 @@
 			</xsl:if>
 
 			<xsl:apply-templates select="Product"></xsl:apply-templates>
-			<xsl:if test="TotalPages>1">
+			<xsl:if test="TotalPage>1">
 				<a href="#" data-next="2" class="ajaxbrandviewmore btn-loadmore">
-					<xsl:attribute name="data-manufacturerid">
-						<xsl:value-of select="/ManufacturerDetail/ManufacturerId"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:attribute name="data-zoneid">
-						<xsl:value-of select="ZoneId"></xsl:value-of>
-					</xsl:attribute>
 					<xsl:attribute name="data-totalpages">
-						<xsl:value-of select="TotalPages"></xsl:value-of>
+						<xsl:value-of select="TotalPage"></xsl:value-of>
+					</xsl:attribute>
+					<xsl:attribute name="data-url">
+						<xsl:value-of select="UrlOutPagenumber"></xsl:value-of>
 					</xsl:attribute>
 					<xsl:text>Xem thêm</xsl:text>
 				</a>
@@ -159,9 +156,9 @@
 				</div>
 			</a>
 			<div class="bottom-item">
-					<!-- <div class="color">
+					<div class="color">
 						<xsl:apply-templates select="ProductColorImage"></xsl:apply-templates>
-					</div> -->
+					</div>
 				<div class="name">
 					<h5>
 						<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>

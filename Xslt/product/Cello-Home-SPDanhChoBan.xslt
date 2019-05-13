@@ -71,9 +71,9 @@
 						</xsl:choose>
 				</div>
 				<div class="bottom-item">
-					<div class="color">
+					<!-- <div class="color">
 						<xsl:apply-templates select="ProductColorImage"></xsl:apply-templates>
-					</div>
+					</div> -->
 					<div class="name">
 						<h5>
 							<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>

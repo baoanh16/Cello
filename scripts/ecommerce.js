@@ -829,6 +829,11 @@ var AjaxCart = {
 				else if (response.message) {
 					alert(response.message);
 				}
+				setTimeout(() => {
+					$('html,body').animate({
+						scrollTop: 0
+					}, 500)
+				}, 300);
 			},
 			error: this.ajaxFailure
 		});

@@ -132,10 +132,9 @@
 										<span class="increase">+</span>
 									</span>
 								</div>
-								<xsl:if test="/ProductDetail/BriefContent != ''">
-									<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes">
-									</xsl:value-of>
-								</xsl:if>
+
+								<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes">
+								</xsl:value-of>
 								<!-- <div class="tr">
 									<span>Bộ sản phẩm</span>
 									<span>Loa , Hộp, Adapter, Dây Sạc, Sách Hướng Dẫn, Phiếu bảo hành </span>
@@ -165,13 +164,14 @@
 												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
 											</xsl:attribute>Mua ngay
 										</a>
-										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>Mua trả góp
-										</a>
-
+                    <xsl:if test="/ProductDetail/EnableTraGop = 'true'">
+  										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
+  											onclick="AjaxCart.addproducttocart_details(this); return false;">
+  											<xsl:attribute name="data-productid">
+  												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+  											</xsl:attribute>Mua trả góp
+  										</a>
+                    </xsl:if>
 									</xsl:otherwise>
 								</xsl:choose>
 							</div>
@@ -199,9 +199,11 @@
 										<span class="fas fa-gift"></span>
 										<span>QUÀ TẶNG &amp; KHUYẾN MÃI</span>
 									</h4>
+
 									<xsl:value-of select="/ProductDetail/GiftProductTemplate"
 										disable-output-escaping="yes" />
 									<div class="bottom">
+
 										<xsl:value-of select="/ProductDetail/GiftDescription"
 											disable-output-escaping="yes" />
 									</div>
@@ -220,6 +222,7 @@
 		<xsl:if test="count(/ProductDetail/ProductSamePrice) &gt; 0">
 			<div class="productSamePrice">
 				<div class="row">
+
 					<div class="col-12 productSlider-2">
 						<div class="blockTitle">Sản phẩm cùng tầm giá</div>
 						<div class="swiper-container">
@@ -266,6 +269,7 @@
 								<div class="infoTable">
 									<xsl:apply-templates select="/ProductDetail/ProductAttributes">
 									</xsl:apply-templates>
+
 								</div>
 							</div>
 						</div>

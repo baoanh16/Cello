@@ -264,7 +264,7 @@ p, h1, h2, h3, h4, h5, h6
 				b
 					margin-left: 8px
 	.bottom-item
-		+pad(r(12px))
+		padding: 5px
 		.color
 			width: 100%
 			display: flex
@@ -318,6 +318,8 @@ p, h1, h2, h3, h4, h5, h6
 					+fz(r(18px))
 					color: #ff6600
 					text-transform: uppercase
+					@media (max-width: 767.9px)
+						font-size: 13px
 	@media (min-width: 992px)
 		overflow: visible
 		.gift-detail

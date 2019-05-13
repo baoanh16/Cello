@@ -132,11 +132,8 @@
 										<span class="increase">+</span>
 									</span>
 								</div>
-								<xsl:if test="/ProductDetail/BriefContent != ''">
-									<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes">
-									</xsl:value-of>
-								</xsl:if>
-								<!-- <div class="tr">
+
+								<div class="tr">
 									<span>Bộ sản phẩm</span>
 									<span>Loa , Hộp, Adapter, Dây Sạc, Sách Hướng Dẫn, Phiếu bảo hành </span>
 								</div>
@@ -146,34 +143,16 @@
 										<span>12 Tháng Chính Hãng</span>
 										<a href="#">Tìm trung tâm bảo hành</a>
 									</p>
-								</div> -->
+								</div>
 							</div>
 							<div class="productButton">
-								<xsl:choose>
-									<xsl:when test="/ProductDetail/PreOrder = 'true'">
-										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>Đặt Hàng Trước
-										</a>
-									</xsl:when>
-									<xsl:otherwise>
-										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>Mua ngay
-										</a>
-										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>Mua trả góp
-										</a>
-
-									</xsl:otherwise>
-								</xsl:choose>
+								<a class="btnBuy btn-addtocart" href="javascript:void(0)"
+									onclick="AjaxCart.addproducttocart_details(this); return false;">
+									<xsl:attribute name="data-productid">
+										<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+									</xsl:attribute>Mua ngay
+								</a>
+								<a class="btnBuy" href="#">Mua trả góp</a>
 							</div>
 							<div class="socialShare">
 								<a class="facebook">
@@ -193,18 +172,15 @@
 							</div>
 						</div>
 						<div class="col-xl-5">
-							<xsl:if test="/ProductDetail/GiftProductTemplate != ''">
+							<xsl:if test="/ProductDetail/PromotionDetail != ''">
 								<div class="giftBox">
-									<h4>
-										<span class="fas fa-gift"></span>
-										<span>QUÀ TẶNG &amp; KHUYẾN MÃI</span>
-									</h4>
-									<xsl:value-of select="/ProductDetail/GiftProductTemplate"
-										disable-output-escaping="yes" />
-									<div class="bottom">
-										<xsl:value-of select="/ProductDetail/GiftDescription"
+									<h4> <span class="fas fa-gift"></span><span>QUÀ TẶNG &amp; KHUYẾN MÃI</span></h4>
+									<div class="item">
+										<xsl:value-of select="/ProductDetail/PromotionDetail"
 											disable-output-escaping="yes" />
+
 									</div>
+									<div class="bottom"><span>*</span><span>Số lượng quà tặng có hạn</span></div>
 								</div>
 
 							</xsl:if>
@@ -220,6 +196,7 @@
 		<xsl:if test="count(/ProductDetail/ProductSamePrice) &gt; 0">
 			<div class="productSamePrice">
 				<div class="row">
+
 					<div class="col-12 productSlider-2">
 						<div class="blockTitle">Sản phẩm cùng tầm giá</div>
 						<div class="swiper-container">
@@ -234,15 +211,13 @@
 		<div class="productDetail-2">
 			<div class="row">
 				<div class="col-lg-8">
-					<xsl:if test="/ProductDetail/FullContent !=''">
-						<div class="product-description">
-							<div class="blockTitle">Mô tả sản phẩm</div>
-							<div class="content">
-								<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes">
-								</xsl:value-of>
-							</div>
+					<div class="product-description">
+						<div class="blockTitle">Mô tả sản phẩm</div>
+						<div class="content">
+							<xsl:value-of select="/ProductDetail/FullContent" disable-output-escaping="yes">
+							</xsl:value-of>
 						</div>
-					</xsl:if>
+					</div>
 					<xsl:if test="count(/ProductDetail/ProductVideos) > 0">
 						<div class="video">
 							<div class="blockTitle">Video</div>
@@ -266,6 +241,7 @@
 								<div class="infoTable">
 									<xsl:apply-templates select="/ProductDetail/ProductAttributes">
 									</xsl:apply-templates>
+
 								</div>
 							</div>
 						</div>
@@ -327,23 +303,6 @@
 				</xsl:if>
 			</div>
 		</div>
-		<xsl:if test="/ProductDetail/ManufacturerDescription != ''">
-			<div class="term-content">
-				<div class="container">
-					<div class="body">
-						<div class="title">
-							<div class="btn-close">
-								<span class="mdi mdi-close"></span>
-							</div>
-						</div>
-						<div class="content">
-							<xsl:value-of select="/ProductDetail/ManufacturerDescription"
-								disable-output-escaping="yes" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="ProductImages" mode="Big">
@@ -406,51 +365,35 @@
 							<span>Quà tặng</span>
 						</div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5">
-								<span>Hàng demo</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4">
-								<span>Hàng 99%</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3">
-								<span>Like new</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2">
-								<span>Sắp có hàng</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1">
-								<span>New</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2">
-								<span>Loa di động</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">
@@ -520,51 +463,35 @@
 							<span>Quà tặng</span>
 						</div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5">
-								<span>Hàng demo</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4">
-								<span>Hàng 99%</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3">
-								<span>Like new</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2">
-								<span>Sắp có hàng</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1">
-								<span>New</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2">
-								<span>Loa di động</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">
@@ -702,56 +629,37 @@
 					</xsl:if>
 
 					<xsl:if test="PromotionCatalogText != ''">
-						<div class="gift">
-							<em class="fas fa-gift"></em>
-							<span>Quà tặng</span>
-						</div>
+						<div class="gift"><em class="fas fa-gift"></em><span>Quà tặng</span></div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5">
-								<span>Hàng demo</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4">
-								<span>Hàng 99%</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3">
-								<span>Like new</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2">
-								<span>Sắp có hàng</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1">
-								<span>New</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2">
-								<span>Loa di động</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">
@@ -760,16 +668,12 @@
 						</h5>
 					</div>
 					<div class="price">
-						<div class="old">
-							<span>
+						<div class="old"><span>
 								<xsl:value-of select="OldPrice" disable-output-escaping="yes"></xsl:value-of>
-							</span>
-						</div>
-						<div class="new">
-							<span>
+							</span></div>
+						<div class="new"><span>
 								<xsl:value-of select="Price" disable-output-escaping="yes"></xsl:value-of>
-							</span>
-						</div>
+							</span></div>
 					</div>
 				</div>
 				<xsl:if test="PromotionCatalogText != ''">
@@ -816,56 +720,37 @@
 					</xsl:if>
 
 					<xsl:if test="PromotionCatalogText != ''">
-						<div class="gift">
-							<em class="fas fa-gift"></em>
-							<span>Quà tặng</span>
-						</div>
+						<div class="gift"><em class="fas fa-gift"></em><span>Quà tặng</span></div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5">
-								<span>Hàng demo</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4">
-								<span>Hàng 99%</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3">
-								<span>Like new</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2">
-								<span>Sắp có hàng</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1">
-								<span>New</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2">
-								<span>Loa di động</span>
-							</div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1">
-								<span>Bán chạy</span>
-							</div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">
@@ -874,16 +759,12 @@
 						</h5>
 					</div>
 					<div class="price">
-						<div class="old">
-							<span>
+						<div class="old"><span>
 								<xsl:value-of select="OldPrice" disable-output-escaping="yes"></xsl:value-of>
-							</span>
-						</div>
-						<div class="new">
-							<span>
+							</span></div>
+						<div class="new"><span>
 								<xsl:value-of select="Price" disable-output-escaping="yes"></xsl:value-of>
-							</span>
-						</div>
+							</span></div>
 					</div>
 				</div>
 				<xsl:if test="PromotionCatalogText != ''">
@@ -910,16 +791,15 @@
 			<span>
 				<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
 			</span>
-			<div class="list">
-				<xsl:choose>
-					<xsl:when test="FieldType=1">
-						<xsl:apply-templates select="Options" mode="Color"></xsl:apply-templates>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:apply-templates select="Options" mode="Other"></xsl:apply-templates>
-					</xsl:otherwise>
-				</xsl:choose>
-			</div>
+
+			<xsl:choose>
+				<xsl:when test="FieldType=1">
+					<xsl:apply-templates select="Options" mode="Color"></xsl:apply-templates>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="Options" mode="Other"></xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
 			<input type="hidden" class="product-option-input">
 			<xsl:attribute name="name">
 				<xsl:text>product_option_</xsl:text>
@@ -985,5 +865,4 @@
 			<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
 		</a>
 	</xsl:template>
-
 </xsl:stylesheet>

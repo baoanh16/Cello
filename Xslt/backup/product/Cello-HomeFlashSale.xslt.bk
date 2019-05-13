@@ -5,24 +5,20 @@
 	<xsl:template match="/">
 		<div class="cello-title">
 			<h2>
-				<xsl:value-of select="/FlashSaleList/ModuleTitle" disable-output-escaping="yes"></xsl:value-of>
+				<xsl:value-of select="/ProductList/ModuleTitle" disable-output-escaping="yes"></xsl:value-of>
 			</h2>
 		</div>
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
-				<xsl:apply-templates select="/FlashSaleList/Product"></xsl:apply-templates>
+				<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
 
 			</div>
 		</div>
 
-		<xsl:if test="count(/FlashSaleList/Product) >0">
+		<xsl:if test="count(/ProductList/Product) >0">
 			<div class="swiper-nav">
-				<div class="swiper-prev">
-					<em class="lnr lnr-chevron-left"></em>
-				</div>
-				<div class="swiper-next">
-					<em class="lnr lnr-chevron-right"></em>
-				</div>
+				<div class="swiper-prev"><em class="lnr lnr-chevron-left"></em></div>
+				<div class="swiper-next"><em class="lnr lnr-chevron-right"></em></div>
 			</div>
 		</xsl:if>
 	</xsl:template>
@@ -35,8 +31,7 @@
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url"></xsl:value-of>
 						</xsl:attribute>
-						<div class="img">
-							<img>
+						<div class="img"><img>
 							<xsl:attribute name="src">
 								<xsl:value-of select="ImageUrl"></xsl:value-of>
 							</xsl:attribute>
@@ -46,20 +41,16 @@
 							</img>
 						</div>
 						<xsl:if test="Percent != ''">
-							<div class="pro">
-								<span>
-									-<xsl:value-of select="Percent" disable-output-escaping="yes">
-									</xsl:value-of>%
-								</span>
-							</div>
+							<div class="pro"><span>-<xsl:value-of select="Percent" disable-output-escaping="yes">
+									</xsl:value-of>%</span></div>
 						</xsl:if>
 						<xsl:if test="PromotionCatalogText != ''">
-							<div class="gift">
-								<em class="fas fa-gift"></em>
-								<span>Quà tặng</span>
-							</div>
+							<div class="gift"><em class="fas fa-gift"></em><span>Quà tặng</span></div>
 						</xsl:if>
 
+						<xsl:text disable-output-escaping="yes">
+							<xsl:value-of select="ShowOption" disable-output-escaping="yes"></xsl:value-of>
+						</xsl:text>
 						<xsl:choose>
 							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
 								<div class="status stt-1"><span>New</span></div>
@@ -93,48 +84,35 @@
 							</xsl:when>
 						</xsl:choose>
 						<div class="time">
-							<xsl:attribute name="data-endtime">
-								<xsl:value-of select="EndDate" disable-output-escaping="yes"></xsl:value-of>
-							</xsl:attribute>
-							<p>
-								<span class="opt-title">
-								Còn lại 
-								</span>
-								<span class="num hour"></span>
-								<b>:</b>
-								<span class="num minute"></span>
-								<b>:</b>
-								<span class="num second"></span>
-							</p>
+							<p>Còn lại <span class="num">24</span><b>:</b><span class="num">30</span><b>:</b><span
+									class="num">50</span></p>
 						</div>
 					</a>
 				</div>
 				<div class="bottom-item">
-					<!-- <a>
+					<a>
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url"></xsl:value-of>
-						</xsl:attribute> -->
+						</xsl:attribute>
 						<!-- <div class="color">
-							<xsl:apply-templates select="ProductColorImage"></xsl:apply-templates>
-						</div> -->
+						<div class="color-item active" style="background: #000000"></div>
+						<div class="color-item" style="background: #ff3c00"></div>
+						<div class="color-item" style="background: #cccccc"></div>
+					</div> -->
 						<div class="name">
 							<h5>
 								<xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
 							</h5>
 						</div>
 						<div class="price">
-							<div class="old">
-								<span>
+							<div class="old"><span>
 									<xsl:value-of select="OldPrice" disable-output-escaping="yes"></xsl:value-of>
-								</span>
-							</div>
-							<div class="new">
-								<span>
+								</span></div>
+							<div class="new"><span>
 									<xsl:value-of select="Price" disable-output-escaping="yes"></xsl:value-of>
-								</span>
-							</div>
+								</span></div>
 						</div>
-					<!-- </a> -->
+					</a>
 				</div>
 				<xsl:if test="PromotionCatalogText != ''">
 					<div class="gift-detail">
@@ -162,28 +140,5 @@
 				</div> -->
 			</div>
 		</div>
-	</xsl:template>
-
-	<xsl:template match="ProductColorImage">
-		<a>
-			<xsl:attribute name="href">
-				<xsl:value-of select="ProductUrl" disable-output-escaping="yes"></xsl:value-of>
-			</xsl:attribute>
-			<div class="color-item">
-				<xsl:if test="position() = 1">
-					<xsl:attribute name="class">
-						<xsl:text>color-item active</xsl:text>
-					</xsl:attribute>
-				</xsl:if>
-				<img>
-				<xsl:attribute name="src">
-					<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
-				</xsl:attribute>
-				<xsl:attribute name="alt">
-					<xsl:value-of select="ProductTitle"></xsl:value-of>
-				</xsl:attribute>
-				</img>
-			</div>
-		</a>
 	</xsl:template>
 </xsl:stylesheet>
