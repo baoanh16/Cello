@@ -5,19 +5,21 @@
 
 	<xsl:template match="/">
 		<div class="cello-tabContent">
-			<div class="row list-item no-gutters active" cello-tabContent="1">
+			<div class="row list-item">
 				<xsl:apply-templates select="/ManufacturerList/Manufacturer"></xsl:apply-templates>
 			</div>
 		</div>
-		<div class="button">
-			<div class="cello-viewMore">
-				<a href="javascript:void(0)">Xem thêm</a>
+		<xsl:if test="count(/ManufacturerList/Manufacturer)&gt;12">
+			<div class="button">
+				<div class="cello-viewMore">
+					<a href="javascript:void(0)">Xem thêm</a>
+				</div>
 			</div>
-		</div>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="Manufacturer">
-		<div class="col-xl-item col-sm-6 col-md-4 col-lg-3 item">
+		<div class="col-xl-2 col-lg-3 col-4 item">
 			<div class="top-item">
 				<a class="brand-item">
 					<xsl:attribute name="href">

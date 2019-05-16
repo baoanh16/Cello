@@ -5,33 +5,32 @@
 
 	<xsl:template match="/">
 		<div class="search-results">
-			<h4>Kết quả tra cứu</h4>
-			<xsl:apply-templates select="/OrderList/Order"></xsl:apply-templates>
-		</div>
-	</xsl:template>
-	<xsl:template match="Order">
-		<div class="result-wrapper">
-			<div class="info table">
-				<div class="tr">
-					<span class="fieldname">Tên khách hàng</span>
-					<span class="value">
-						<xsl:value-of select="FirstName" />
-					</span>
+			<xsl:if test="count(/WarrantyList/WarrantyItem) > 0">
+
+				<h4>Kết quả tra cứu</h4>
+				<div class="result-wrapper">
+					<div class="info table">
+						<div class="tr">
+							<span class="fieldname">Tên khách hàng</span>
+							<span class="value">
+								<xsl:value-of select="/WarrantyList/FullName" />
+							</span>
+						</div>
+						<div class="tr">
+							<span class="fieldname">Số điện thoại</span>
+							<span class="value">
+								<xsl:value-of select="/WarrantyList/Phone" />
+							</span>
+						</div>
+					</div>
+					<xsl:apply-templates select="/WarrantyList/WarrantyItem"></xsl:apply-templates>
 				</div>
-				<div class="tr">
-					<span class="fieldname">Số điện thoại</span>
-					<span class="value">
-						<xsl:value-of select="Phone" />
-					</span>
-				</div>
-			</div>
-			<xsl:apply-templates select="Product" />
-			<!-- <div class="product table">
-			</div> -->
+			</xsl:if>
+			<h4>Không tìm thấy dữ liệu phù hợp</h4>
 		</div>
 	</xsl:template>
 
-	<xsl:template match="Product">
+	<xsl:template match="WarrantyItem">
 		<div class="product table">
 		<div class="tr">
 			<span class="fieldname">Sản phẩm</span>
@@ -42,16 +41,18 @@
 		<div class="tr">
 			<span class="fieldname">Số Seri</span>
 			<span class="value">
-				<xsl:value-of select="Code"></xsl:value-of>
+				<xsl:value-of select="Seri"></xsl:value-of>
 			</span>
 		</div>
 		<div class="tr">
 			<span class="fieldname">Ngày Mua</span>
-			<span class="value">25/01/2018</span>
+			<span class="value">
+				<xsl:value-of select="DateStart"></xsl:value-of></span>
 		</div>
 		<div class="tr">
-			<span class="fieldname">Số Seri</span>
-			<span class="value">25/02/2019</span>
+			<span class="fieldname">Ngày hết hạn</span>
+			<span class="value">
+				<xsl:value-of select="DateEnd"></xsl:value-of></span>
 		</div>
 	</div>
 	</xsl:template>

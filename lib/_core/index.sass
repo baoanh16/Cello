@@ -155,7 +155,8 @@ p, h1, h2, h3, h4, h5, h6
 	.top-item
 		position: relative
 		.img
-			+pad(r(30px) r(30px) 0 r(30px))
+			padding: 15px
+			padding-bottom: 0
 			text-align: center
 		.pro
 			width: 35px
@@ -198,6 +199,13 @@ p, h1, h2, h3, h4, h5, h6
 			padding: 0 5px 0 12px
 			font-size: 11px
 			color: white
+			@media (max-width: 767.9px)
+				height: 25px
+				display: flex
+				justify-content: center
+				align-items: center
+				line-height: 25px
+				top: 40px
 			&.sl-1
 				background: red
 			&.sl-2,&.sl-3
@@ -215,6 +223,12 @@ p, h1, h2, h3, h4, h5, h6
 			+pad(null 5px null 15px)
 			border-top-left-radius: 35px
 			border-bottom-left-radius: 35px
+			@media (max-width: 767.9px)
+				height: 25px
+				display: flex
+				justify-content: center
+				align-items: center
+				line-height: 25px
 			&.stt-1
 				background: #fe6600
 			&.stt-2
@@ -302,8 +316,6 @@ p, h1, h2, h3, h4, h5, h6
 			padding-top: r(12px)
 			display: flex
 			justify-content: space-between
-			@media (max-width: 767.9px)
-				flex-direction: column
 			.old
 				span
 					+fz(r(12px))

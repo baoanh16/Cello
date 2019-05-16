@@ -31,6 +31,7 @@
 									</xsl:value-of>
 								</h1>
 								<div class="cobra">
+
 									<div class="code">
 										<span>SKU: </span>
 										<span class="product-code">
@@ -131,9 +132,8 @@
 										<span class="increase">+</span>
 									</span>
 								</div>
-								<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes">
-								</xsl:value-of>
-								<!-- <div class="tr">
+
+								<div class="tr">
 									<span>Bộ sản phẩm</span>
 									<span>Loa , Hộp, Adapter, Dây Sạc, Sách Hướng Dẫn, Phiếu bảo hành </span>
 								</div>
@@ -143,7 +143,7 @@
 										<span>12 Tháng Chính Hãng</span>
 										<a href="#">Tìm trung tâm bảo hành</a>
 									</p>
-								</div> -->
+								</div>
 							</div>
 							<div class="productButton">
 								<a class="btnBuy btn-addtocart" href="javascript:void(0)"
@@ -365,35 +365,35 @@
 							<span>Quà tặng</span>
 						</div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5"><span>Hàng demo</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4"><span>Hàng 99%</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3"><span>Like new</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2"><span>Sắp có hàng</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1"><span>New</span></div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3"><span>Bán chạy</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2"><span>Loa di động</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1"><span>Bán chạy</span></div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">
@@ -463,35 +463,35 @@
 							<span>Quà tặng</span>
 						</div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5"><span>Hàng demo</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4"><span>Hàng 99%</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3"><span>Like new</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2"><span>Sắp có hàng</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1"><span>New</span></div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3"><span>Bán chạy</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2"><span>Loa di động</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1"><span>Bán chạy</span></div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">
@@ -631,35 +631,35 @@
 					<xsl:if test="PromotionCatalogText != ''">
 						<div class="gift"><em class="fas fa-gift"></em><span>Quà tặng</span></div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5"><span>Hàng demo</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4"><span>Hàng 99%</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3"><span>Like new</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2"><span>Sắp có hàng</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1"><span>New</span></div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3"><span>Bán chạy</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2"><span>Loa di động</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1"><span>Bán chạy</span></div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">
@@ -722,35 +722,35 @@
 					<xsl:if test="PromotionCatalogText != ''">
 						<div class="gift"><em class="fas fa-gift"></em><span>Quà tặng</span></div>
 					</xsl:if>
-
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
-							<div class="status stt-5"><span>Hàng demo</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
-							<div class="status stt-4"><span>Hàng 99%</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
-							<div class="status stt-3"><span>Like new</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
-							<div class="status stt-2"><span>Sắp có hàng</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
-							<div class="status stt-1"><span>New</span></div>
-						</xsl:when>
-					</xsl:choose>
-					<xsl:choose>
-						<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
-							<div class="sale sl-3"><span>Bán chạy</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
-							<div class="sale sl-2"><span>Loa di động</span></div>
-						</xsl:when>
-						<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
-							<div class="sale sl-1"><span>Bán chạy</span></div>
-						</xsl:when>
-					</xsl:choose>
+					
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 64) mod 2 = 1">
+								<div class="status stt-5"><span>Hàng demo</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 32) mod 2 = 1">
+								<div class="status stt-4"><span>Hàng 99%</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 16) mod 2 = 1">
+								<div class="status stt-3"><span>Like new</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 8) mod 2 = 1">
+								<div class="status stt-2"><span>Sắp có hàng</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
+								<div class="status stt-1"><span>New</span></div>
+							</xsl:when>
+						</xsl:choose>
+						<xsl:choose>
+							<xsl:when test="floor(ShowOption div 512) mod 2 = 1">
+								<div class="sale sl-3"><span>Bán chạy</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 256) mod 2 = 1">
+								<div class="sale sl-2"><span>Loa di động</span></div>
+							</xsl:when>
+							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
+								<div class="sale sl-1"><span>Bán chạy</span></div>
+							</xsl:when>
+						</xsl:choose>
 				</div>
 				<div class="bottom-item">
 					<div class="name">

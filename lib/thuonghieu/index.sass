@@ -1,15 +1,19 @@
 .cello-thuonghieu
+	padding: 60px 0
+	@media (max-width: 991.98px)
+		padding: 40px 0
 	.cello-tabContent 
 		.list-item 
 			overflow: hidden
+			padding: 15px
+			margin: -15px
 			&.show
 				height: unset!important
 			.item 
+				margin-bottom: 20px
 				.top-item
 					.img
-						padding: 40px 15px
-			.col-xl-item 
-				padding: 0 10px
+						padding: 20px 10px
 	+media-breakpoint-up(lg)
 		.cello-navTab
 			.cello-tabList
@@ -29,7 +33,3 @@
 	+media-breakpoint-up(xl) 
 		.cello-tabContent
 			.list-item
-				.col-xl-item
-					-ms-flex: 0 0 16.6666666%
-					flex: 0 0 16.6666666%
-					max-width: 16.6666666%

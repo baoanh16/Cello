@@ -131,10 +131,10 @@ $(document).ready(function () {
 	}
 
 
-	var cumshot = $('.cello-thuonghieu .list-item .item').height()
-	if ($('.cello-thuonghieu .list-item').height() > 2 * cumshot) {
-		$('.cello-thuonghieu .list-item').height(2 * cumshot)
-	}
+	// var cumshot = $('.cello-thuonghieu .list-item .item').outerHeight()
+	// if ($('.cello-thuonghieu .list-item').height() > (2 * cumshot + 20)) {
+	// 	$('.cello-thuonghieu .list-item').height(2 * cumshot + 20)
+	// }
 
 	$('body').on('click', '.cello-thuonghieu .cello-viewMore', function () {
 		$('.cello-thuonghieu .list-item').addClass('show')

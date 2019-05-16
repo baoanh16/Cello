@@ -3,41 +3,91 @@
 	.cello-navTab 
 		+pad(40px 0)
 		border-bottom: 1px solid #e1e1e1
-		.cello-navTab
-		overflow: hidden
-		.cello-tabList
-			padding-left: 0
-			margin-bottom: 0
-			list-style: none
-			background: #fff
-			display: none
-			+pad(.5rem 1rem)
-			.item 
-				+ .item 
-					border-top: 1px solid #2eb135
-				text-align: center
-				+fz(r(14px))
-				+pad(.5rem null)
-				p 
-					margin-top: 12px
-				&.active, &:hover
-					color: #2eb135
+		// .cello-navTab
+		// overflow: hidden
+		// .cello-tabList
+		// 	padding-left: 0
+		// 	margin-bottom: 0
+		// 	list-style: none
+		// 	background: #fff
+		// 	display: none
+		// 	+pad(.5rem 1rem)
+		// 	.item 
+		// 		+ .item 
+		// 			border-top: 1px solid #2eb135
+		// 		text-align: center
+		// 		+fz(r(14px))
+		// 		+pad(.5rem null)
+		// 		p 
+		// 			margin-top: 12px
+		// 		&.active, &:hover
+		// 			color: #2eb135
+		// .cello-mbTab
+		// 	background-image: linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+		// 	+pad(r(5px) 1rem)
+		// 	color: #fff
+		// 	text-transform: uppercase
+		// 	+fz(r(14px))
+		// 	position: relative
+		// 	user-select: none
+		// 	&:after
+		// 		+mdi('\f140')
+		// 		+fz(1.2rem)
+		// 		+pos(abs, 50% 1rem null null)
+		// 		transform: translateY(-50%)
+		// 	&.active
+		// 		&:after
+		// 			transform: translateY(-50%) rotate(180deg)
+		
 		.cello-mbTab
-			background-image: linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
-			+pad(r(5px) 1rem)
-			color: #fff
-			text-transform: uppercase
-			+fz(r(14px))
-			position: relative
-			user-select: none
-			&:after
-				+mdi('\f140')
-				+fz(1.2rem)
-				+pos(abs, 50% 1rem null null)
-				transform: translateY(-50%)
-			&.active
-				&:after
-					transform: translateY(-50%) rotate(180deg)
+			display: none
+		.cello-tabList
+			display: flex
+			background: none
+			overflow-x: auto
+			&::-webkit-scrollbar
+				background: rgba(0,0,0,.2)
+				height: 5px
+			&::-webkit-scrollbar-thumb
+				background: rgb(122,193,29)
+			.item
+				+mar(null 5px)
+				color: #999999
+				cursor: pointer
+				user-select: none
+				+fz(r(16px))
+				+tran(.4s)
+				transition: .5s all ease-in-out
+				@media (max-width: 991.98px)
+					flex: 0 0 33.3333%
+					max-width: 33.3333%
+					margin: 0
+					margin-bottom: 10px
+					padding: 0 5px
+					p
+						margin-top: 10px
+						font-size: 14px
+						text-align: center
+				+ .item 
+					border: none
+				.img 
+					margin: auto
+					width: 45px 
+					height: 45px 
+					line-height: 45px
+					transition: .5s all ease-in-out
+					border-radius: 50px 
+					text-align: center
+					background: rgb(255, 255, 255)
+					box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2)
+				&:hover, &.active
+					.img 
+						background-image: -moz-linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+						background-image: -webkit-linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+						background-image: -ms-linear-gradient( 0deg, rgb(46,177,53) 0%, rgb(0,152,74) 100%, rgb(78,147,12) 100%, rgb(82,194,23) 100%, rgb(117,165,80) 100%, rgb(110,175,64) 100%, rgb(122,193,29) 100%, rgb(180,217,133) 100%, rgb(168,212,113) 100%, rgb(162,210,97) 100%, rgb(176,214,102) 100%)
+						img 
+							filter: brightness(0) invert(1)
+
 	+media-breakpoint-up(lg)
 		.cello-navTab
 			.cello-mbTab
