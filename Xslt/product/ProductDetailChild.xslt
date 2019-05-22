@@ -191,7 +191,7 @@
 	<xsl:template match="ProductImages" mode="_BigImages">
 		<div class="swiper-slide">
 			<div class="item">
-				<a class="product-img fancybox">
+				<a class="product-img fancybox" data-fancybox="">
 					<xsl:attribute name="href">
 						<xsl:value-of select="ImageUrl"></xsl:value-of>
 					</xsl:attribute>

@@ -19,9 +19,32 @@ function LoadManufacture(zoneId, $div) {
 		error: this.ajaxFailure
 	});
 }
+function LoadManufactureProduct($button)
+{
+	var link=$($button).attr("href");
+	var pageNext=$($button).data("next");
+	if(link.includes('?'))
+		link = link + "&pagenumber="+pageNext;
+	else
+		link = link + "?pagenumber="+pageNext;
+	var curentTab=$($button).parents(".list-item").attr("cello-tabcontent");
+	$.ajax({
+		url: link, data: { isajax: true }, success: function (data) {
+			var elementName="div[cello-tabcontent='" + curentTab + "']";
+			var elementProductItem="div[cello-tabcontent='" + curentTab + "'] .productItem";
+			$(data).find(elementProductItem).insertBefore($($button).parent().parent());
+			$($button).data("next",pageNext+1);
+			iF((pageNext+1) == $($button).data("totalpages"))
+				$($button).remove();
+		}
+	});
+}
 $(document).ready(function () {
 
-
+	$("a.ajaxbrandviewmore").click(function(){
+		LoadManufactureProduct(this);
+		return false;
+	});
 	// Init Swiper
 
 	if ($(".product-detail-page").length > 0) {

@@ -5,7 +5,12 @@
 
 	<xsl:template match="/">
 		<div class="cello-tabContent">
-			<div class="row list-item">
+			<div class="row list-item no-gutters active">
+				<xsl:if test="count(/ManufacturerList/Manufacturer)&gt;12">
+					<xsl:attribute name="style">
+						<xsl:text disable-output-escaping="yes">height: 250px</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
 				<xsl:apply-templates select="/ManufacturerList/Manufacturer"></xsl:apply-templates>
 			</div>
 		</div>

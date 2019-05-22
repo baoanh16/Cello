@@ -19,7 +19,7 @@
 		</section>
 		<section class="cello-thuonghieu-ct">
 			<div class="container">
-				<div class="filter-nav">
+				<!-- <div class="filter-nav">
 					<div class="select">
 						<div class="select-show">
 							<span>Tính năng</span>
@@ -48,8 +48,32 @@
 							<div class="select-item">Giá từ cao đến thấp</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="cello-tabContent">
+         <div class="row list-item no-gutters active" cello-tabContent="1">
+          <xsl:apply-templates select="/ManufacturerDetail/Product"/>
+            <xsl:if test="/ManufacturerDetail/TotalPage>1">
+			<div class="col-12">
+			<div class="cello-viewMore">
+              <a href="#" data-next="2" class="ajaxbrandviewmore btn-loadmore">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="/ManufacturerDetail/UrlOutPagenumber"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="data-manufacturerid">
+                  <xsl:value-of select="/ManufacturerDetail/ManufacturerId"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="data-zoneid">
+                  <xsl:value-of select="/ManufacturerDetail/ZoneId"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="data-totalpages">
+                  <xsl:value-of select="/ManufacturerDetail/TotalPage"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:text>Xem thêm</xsl:text>
+              </a>
+			</div>
+			</div>
+            </xsl:if>
+          </div>
 					<xsl:apply-templates select="/ManufacturerDetail/Zone"></xsl:apply-templates>
 				</div>
 			</div>
@@ -60,13 +84,13 @@
 	<xsl:template match="Zone" mode="Cate">
 		<li class="item">
 			<xsl:attribute name="cello-tabItem">
-				<xsl:value-of select="position()"></xsl:value-of>
+				<xsl:value-of select="position() + 1"></xsl:value-of>
 			</xsl:attribute>
-			<xsl:if test="position() = 1">
+<!-- 			<xsl:if test="position() = 1">
 				<xsl:attribute name="class">
 					<xsl:text>item active</xsl:text>
 				</xsl:attribute>
-			</xsl:if>
+			</xsl:if> -->
 
 			<div class="img">
 				<img src="./img/thuonghieu-ct/1.png" alt="">
@@ -89,16 +113,18 @@
 
 		<div class="row list-item no-gutters" cello-tabContent="1">
 			<xsl:attribute name="cello-tabContent">
-				<xsl:value-of select="position()" />
+				<xsl:value-of select="position() + 1" />
 			</xsl:attribute>
-			<xsl:if test="position() = 1">
+<!-- 			<xsl:if test="position() = 1">
 				<xsl:attribute name="class">
 					<xsl:text>row list-item no-gutters active</xsl:text>
 				</xsl:attribute>
 			</xsl:if>
-
+ -->
 			<xsl:apply-templates select="Product"></xsl:apply-templates>
-			<xsl:if test="TotalPages>1">
+			<xsl:if test="TotalPage>1">
+			<div class="col-12">
+			<div class="cello-viewMore">
 				<a href="#" data-next="2" class="ajaxbrandviewmore btn-loadmore">
 					<xsl:attribute name="data-manufacturerid">
 						<xsl:value-of select="/ManufacturerDetail/ManufacturerId"></xsl:value-of>
@@ -107,10 +133,12 @@
 						<xsl:value-of select="ZoneId"></xsl:value-of>
 					</xsl:attribute>
 					<xsl:attribute name="data-totalpages">
-						<xsl:value-of select="TotalPages"></xsl:value-of>
+						<xsl:value-of select="TotalPage"></xsl:value-of>
 					</xsl:attribute>
 					<xsl:text>Xem thêm</xsl:text>
 				</a>
+			</div>
+			</div>
 			</xsl:if>
 		</div>
 	</xsl:template>
