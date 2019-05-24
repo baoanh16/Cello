@@ -96,10 +96,10 @@ $(document).ready(function () {
 	if ($(window).width() >= 992) {
 
 		$(window).on('scroll', function () {
-			if ($(window).scrollTop() > 50) {
-				$('header .top-nav').slideUp()
+			if ($(window).scrollTop() > 0) {
+				$('header').addClass('active-scroll')
 			} else {
-				$('header .top-nav').slideDown()
+				$('header').removeClass('active-scroll')
 			}
 		})
 	}

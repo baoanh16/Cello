@@ -71,6 +71,27 @@
 									</div>
 								</xsl:if>
 
+								<xsl:if test="/ProductDetail/PreOrder = 'true' and /ProductDetail/SpecialPricePreOrder != ''">
+									<div class="price pre-order-price">
+										<p>
+											<span class="pre-order-text">
+												<xsl:text>Giá đặt Trước: </xsl:text>
+											</span> 
+											<span class="pre-order"><xsl:value-of select="/ProductDetail/SpecialPricePreOrder" disable-output-escaping="yes">
+											</xsl:value-of>
+											</span>
+										</p>
+										<p>
+											<span class="date-pre-order-text">
+												<xsl:text>Ngày giao dự kiến: </xsl:text>
+											</span>
+											<span class="date-pre-order">
+												<xsl:value-of select="/ProductDetail/PreOrderEndDate" disable-output-escaping="yes">
+												</xsl:value-of>
+											</span>
+										</p>
+									</div>
+								</xsl:if>
 								<xsl:if test="/ProductDetail/OldPrice != ''">
 									<div class="tr oldPrice">
 										<span>Giá gốc: </span>
@@ -105,10 +126,10 @@
 							<div class="productInfo">
 								<div class="tr status">
 									<span>Tình trạng</span>
-									<xsl:if test="floor(ShowOption div 8) mod 2 = 1">
+									<xsl:if test="/ProductDetail/OutStock != 'true' ">
 										<span>Còn hàng</span>
 									</xsl:if>
-									<xsl:if test="floor(ShowOption div 8) mod 2 != 1">
+									<xsl:if test="/ProductDetail/OutStock = 'true' ">
 										<span>Hết hàng</span>
 									</xsl:if>
 								</div>
@@ -136,18 +157,8 @@
 									<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes">
 									</xsl:value-of>
 								</xsl:if>
-								<!-- <div class="tr">
-									<span>Bộ sản phẩm</span>
-									<span>Loa , Hộp, Adapter, Dây Sạc, Sách Hướng Dẫn, Phiếu bảo hành </span>
-								</div>
-								<div class="tr">
-									<span>Bảo hàng</span>
-									<p>
-										<span>12 Tháng Chính Hãng</span>
-										<a href="#">Tìm trung tâm bảo hành</a>
-									</p>
-								</div> -->
 							</div>
+							<xsl:if test="/ProductDetail/OutStock != 'true'">
 							<div class="productButton">
 								<xsl:choose>
 									<xsl:when test="/ProductDetail/PreOrder = 'true'">
@@ -165,16 +176,19 @@
 												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
 											</xsl:attribute>Mua ngay
 										</a>
+										<xsl:if test="/ProductDetail/EnableTraGop = 'true'">
 										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
 											onclick="AjaxCart.addproducttocart_details(this); return false;">
 											<xsl:attribute name="data-productid">
 												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
 											</xsl:attribute>Mua trả góp
 										</a>
-
+									</xsl:if>
 									</xsl:otherwise>
 								</xsl:choose>
 							</div>
+						</xsl:if>
+
 							<div class="socialShare">
 								<a class="facebook">
 									<xsl:attribute name="href">

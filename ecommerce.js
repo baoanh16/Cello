@@ -22,7 +22,7 @@ function LoadManufacture(zoneId, $div) {
 function LoadManufactureProduct($button)
 {
 	var link=$($button).attr("href");
-	var pageNext=$($button).data("next");
+	var pageNext=$($button).attr("data-next");
 	if(link.includes('?'))
 		link = link + "&pagenumber="+pageNext;
 	else
@@ -33,12 +33,13 @@ function LoadManufactureProduct($button)
 			var elementName="div[cello-tabcontent='" + curentTab + "']";
 			var elementProductItem="div[cello-tabcontent='" + curentTab + "'] .productItem";
 			$(data).find(elementProductItem).insertBefore($($button).parent().parent());
-			$($button).data("next",pageNext+1);
-			iF((pageNext+1) == $($button).data("totalpages"))
+			$($button).attr("data-next", parseInt(pageNext) + 1);
+			if((parseInt(pageNext) + 1) >= parseInt($($button).data("totalpages")))
 				$($button).remove();
 		}
 	});
 }
+
 $(document).ready(function () {
 
 	$("a.ajaxbrandviewmore").click(function(){
@@ -51,8 +52,9 @@ $(document).ready(function () {
 		var small = new Swiper('.cello-spList .thumbImages', {
 			slidesPerView: 4,
 			spaceBetween: 10,
-			initialSlide: 1,
 			centeredSlides: true,
+			loop: true,
+			loopedSlides: 5,
 			speed: 1000,
 			slideToClickedSlide: true,
 		})
@@ -60,6 +62,12 @@ $(document).ready(function () {
 			slidesPerView: 1,
 			speed: 1000,
 			effect: 'fade',
+			loop: true,
+			loopedSlides: 5,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 			fadeEffect: {
 				crossFade: true
 			},
@@ -495,8 +503,10 @@ var AjaxCart = {
 		this.setLoadWaiting(true);
 
 		if (this.effecttocart == true && this.topcartselector) {
-			var img = $(button).parents('.productDetail').find('.bigImages .swiper-slide-active').find('img');
-			flyToCart($(img), this.topcartselector);
+			var img = '.productSlider .bigImages .swiper-slide-active img';
+			flyToCart(img, this.topcartselector);
+			// var img = $(button).parents('.productDetail').find('.bigImages .swiper-slide-active').find('img');
+			// flyToCart($(img), this.topcartselector);
 		}
 
 		var urladd = siteRoot + "/Product/Services/CartService.aspx";
@@ -770,7 +780,7 @@ var AjaxCart = {
 		//var data = $('#aspnetForm').serializeArray();
 		var data = [];
 		data.push({ name: 'method', value: 'SelectProductOption' });
-		data.push({ name: 'productid', value: $('.btn-addtocart').attr('data-productid') });
+		data.push({ name: 'productid', value: $("#hdProductId").val()});
 		data.push({ name: 'optionid', value: $(button).attr('data-id') });
 		$(".product-option-input").each(function () {
 			var input = $(this).find('input[type="hidden"]');
@@ -819,7 +829,8 @@ var AjaxCart = {
 						var small = new Swiper('.cello-spList .thumbImages', {
 							slidesPerView: 4,
 							spaceBetween: 10,
-							initialSlide: 1,
+							loop: true,
+							loopedSlides: 5,
 							centeredSlides: true,
 							speed: 1000,
 							slideToClickedSlide: true,
@@ -828,6 +839,12 @@ var AjaxCart = {
 							slidesPerView: 1,
 							speed: 1000,
 							effect: 'fade',
+							loop: true,
+							loopedSlides: 5,
+							autoplay: {
+								delay: 3000,
+								disableOnInteraction: false,
+							},
 							fadeEffect: {
 								crossFade: true
 							},
@@ -918,45 +935,45 @@ function displayBarNotification(n, t, i) {
 
 // fly to basket
 function flyToCart(flyer, flyingTo, callBack) {
-	// try {
-	// 	var $jqfunc = $(this);
-	// 	var divider = 3;
-	// 	var flyerClone = $(flyer).clone();
-	// 	$(flyerClone).css({
-	// 		position: 'absolute',
-	// 		top: $(flyer).offset().top + "px",
-	// 		left: $(flyer).offset().left + "px",
-	// 		opacity: 1,
-	// 		'z-index': 1000
-	// 	});
-	// 	$('body').append($(flyerClone));
-	// 	if ($(flyingTo)) {
-	// 		var gotoX = $(flyingTo).offset().left + ($(flyingTo).width() / 2) - ($(flyer).width() / divider) / 2;
-	// 		var gotoY = $(flyingTo).offset().top + ($(flyingTo).height() / 2) - ($(flyer).height() / divider) / 2;
-	// 		$(flyerClone).animate({
-	// 			opacity: 0.7,
-	// 			left: gotoX,
-	// 			top: gotoY,
-	// 			width: 135,
-	// 			height: 135
-	// 		}, 1000,
-	// 			function () {
-	// 				$(flyingTo).fadeOut('300', function () {
-	// 					$(flyingTo).fadeIn('300', function () {
-	// 						$(flyerClone).fadeOut('300', function () {
-	// 							$(flyerClone).remove();
-	// 							if (callBack != null) {
-	// 								callBack.apply($jqfunc);
-	// 							}
-	// 						});
-	// 					});
-	// 				});
-	// 			});
-	// 	}
+	try {
+		var $jqfunc = $(this);
+		var divider = 3;
+		var flyerClone = $(flyer).clone();
+		$(flyerClone).css({
+			position: 'absolute',
+			top: $(flyer).offset().top + "px",
+			left: $(flyer).offset().left + "px",
+			opacity: 1,
+			'z-index': 1000
+		});
+		$('body').append($(flyerClone));
+		if ($(flyingTo)) {
+			var gotoX = $(flyingTo).offset().left + ($(flyingTo).width() / 2) - ($(flyer).width() / divider) / 2;
+			var gotoY = $(flyingTo).offset().top + ($(flyingTo).height() / 2) - ($(flyer).height() / divider) / 2;
+			$(flyerClone).animate({
+				opacity: 0.7,
+				left: gotoX,
+				top: gotoY,
+				width: 135,
+				height: 135
+			}, 1000,
+				function () {
+					$(flyingTo).fadeOut('300', function () {
+						$(flyingTo).fadeIn('300', function () {
+							$(flyerClone).fadeOut('100', function () {
+								$(flyerClone).remove();
+								if (callBack != null) {
+									callBack.apply($jqfunc);
+								}
+							});
+						});
+					});
+				});
+		}
 
-	// } catch (exception) {
+	} catch (exception) {
 
-	// }
+	}
 }
 
 function htmlEncode(n) {

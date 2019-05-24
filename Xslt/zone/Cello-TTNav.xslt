@@ -12,7 +12,7 @@
 
 
 	<xsl:template match="Zone">
-		<div class="col-lg item">
+		<div class="col-sm-6 col-md-4 col-lg item">
 			<a >
 				<xsl:attribute name="href">
 					<xsl:value-of select="Url"></xsl:value-of>

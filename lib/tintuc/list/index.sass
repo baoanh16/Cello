@@ -57,6 +57,8 @@
 						transform: scale(1.2)
 	.news-1
 		.top-news
+			.swiper-slide
+				height: auto
 			.swiper-pagination
 				bottom: auto
 				position: relative
@@ -105,9 +107,15 @@
 			margin-top: r(20px)
 			position: relative
 			.swiper-nav
-				margin-top: 1rem
-				+flex-center()
+				margin: 0
 				div
+					+pos(abs, 50% null null null)
+					transform: translateY(-50%)
+					z-index: 9
+					&.swiper-prev
+						right: 100%
+					&.swiper-next
+						left: 100%
 					&:focus
 						outline: none
 					em
@@ -116,16 +124,24 @@
 					&:hover
 						em
 							color: #ff6600
-				+media-breakpoint-up(lg)
-					margin: 0
+				@media (max-width: 991.98px)
 					div
-						+pos(abs, 50% null null null)
-						transform: translateY(-50%)
-						z-index: 9
+						background: rgba(white,.4)
+						width: 35px
+						height: 35px
+						display: flex
+						justify-content: center
+						align-items: center
+						em
+							font-size: 24px
+							color: white
+							
 						&.swiper-prev
-							right: 100%
+							right: unset
+							left: 0
 						&.swiper-next
-							left: 100%
+							left: unset
+							right: 0
 			.item
 				figure
 					.img
@@ -153,6 +169,7 @@
 							h5
 								+fw(500)
 	.news-2
+		margin-top: 30px
 		background: #fff
 		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1)
 		.list-title
@@ -184,8 +201,7 @@
 					margin-bottom: r(20px)
 			.part-news
 				.news-item
-					+ .news-item
-						margin-top: r(20px)
+					margin-top: r(20px)
 					.item
 						figure
 							figcaption
@@ -225,11 +241,22 @@
 					.item
 						figure
 							display: flex
+							flex-wrap: wrap
 							.img
 								flex: 0 0 210px
 								margin-right: 1rem
 							figcaption
 								padding-top: 0
+								flex-basis: 0
+								flex-grow: 1
+								max-width: 100%
+							@media (max-width: 575.98px)
+								.img,figcaption
+									flex: 0 0 100%
+									max-width: 100%
+								figcaption
+									padding-top: 1rem
+								
 	.hot-list
 		border-top: 3px solid #ff6600
 		.content
@@ -259,13 +286,6 @@
 						figcaption
 							padding-top: 0
 							padding-left: 15px
-	+media-breakpoint-up(md)
-		.news-2
-			.content
-				.part-news
-					.news-item
-						+ .news-item
-							margin-top: 0
 	+media-breakpoint-up(lg)
 		.news-1
 			.top-news

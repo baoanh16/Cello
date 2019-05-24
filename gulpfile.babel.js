@@ -80,13 +80,7 @@ export const styles = () => src('./lib/*.sass')
 
 export const scripts = () => src([
 	'./scripts/*.js',
-	'./lib/*.js',
 	'./lib/**/*.js',
-	'!./scripts/comment.min.js',
-	'!./scripts/dealerfinder.js',
-	'!./scripts/ecommerce.js',
-	"!./scripts/mapping-listener.js",
-	"!./scripts/mapping.js"
 ])
 	.pipe(gulpif(!Prod, sourcemap.init({ loadMaps: true })))
 	.pipe(concat("main.js"))

@@ -218,7 +218,7 @@
 
 			<xsl:if test="position()=3">
 				<xsl:text disable-output-escaping="yes">&lt;div class="part-news"&gt;&lt;div class="row"&gt;</xsl:text>
-				<div class="col-md-3 news-item">
+				<div class="col-sm-6 col-lg-3 news-item">
 					<a class="item">
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url" disable-output-escaping="yes"></xsl:value-of>
@@ -251,7 +251,7 @@
 			</xsl:if>
 
 			<xsl:if test="position()>3 and position()&lt;6">
-				<div class="col-md-3 news-item">
+				<div class="col-sm-6 col-lg-3 news-item">
 					<a class="item">
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url" disable-output-escaping="yes"></xsl:value-of>
@@ -284,7 +284,7 @@
 			</xsl:if>
 
 			<xsl:if test="position()=6 or position()=last()">
-				<div class="col-md-3 news-item">
+				<div class="col-sm-6 col-lg-3 news-item">
 					<a class="item">
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url" disable-output-escaping="yes"></xsl:value-of>
@@ -468,7 +468,7 @@
 
 			<xsl:if test="position()=3">
 				<xsl:text disable-output-escaping="yes">&lt;div class="part-news"&gt;&lt;div class="row"&gt;</xsl:text>
-				<div class="col-md-3 news-item">
+				<div class="col-sm-6 col-lg-3 news-item">
 					<a class="item">
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url" disable-output-escaping="yes"></xsl:value-of>
@@ -501,7 +501,7 @@
 			</xsl:if>
 
 			<xsl:if test="position()>3 and position()&lt;6">
-				<div class="col-md-3 news-item">
+				<div class="col-sm-6 col-lg-3 news-item">
 					<a class="item">
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url" disable-output-escaping="yes"></xsl:value-of>
@@ -534,7 +534,7 @@
 			</xsl:if>
 
 			<xsl:if test="position()=6 or position()=last()">
-				<div class="col-md-3 news-item">
+				<div class="col-sm-6 col-lg-3 news-item">
 					<a class="item">
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url" disable-output-escaping="yes"></xsl:value-of>

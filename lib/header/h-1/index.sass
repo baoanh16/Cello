@@ -3,6 +3,10 @@
 	width: 100%
 	z-index: 100
 	background: #fff
+	@media (min-width: 992px)
+		transition: all .3s cubic-bezier(.2,.5,.5,.8)
+		&.active-scroll
+			transform: translateY(-100px)
 	.top-nav
 		border-bottom: 1px solid #e9e9e9
 		.main-nav
@@ -19,7 +23,7 @@
 				@media (max-width: 991.98px)
 					justify-content: flex-start
 					.toggle-button
-						order: 5
+						order: 1
 					#search
 						order: 4
 						margin-left: 0
@@ -397,7 +401,7 @@
 						flex: 0 0 25%
 						.ModuleContent
 							display: flex
-								flex-wrap: wrap
+							flex-wrap: wrap
 	.bottom-nav
 		border-bottom: 1px solid #e9e9e9
 		@media (min-width: 992px)

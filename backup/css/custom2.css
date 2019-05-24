@@ -1,0 +1,76 @@
+.fa-sign-out-alt:before{
+	content: '\f2f5'
+}
+@media (min-width: 992px){
+	header .mobile-hotline{
+		display: none;
+	}
+}
+@media (max-width: 991.98px){
+	header .mobile-hotline{
+		order: 2;
+		margin-left: 15px;
+	}
+	header .mobile-hotline .ModuleContent a{
+		display: flex;
+		width: 21px;
+		height: 21px;
+		border-radius: 50%;
+		background: #ff6600;
+		color: white;
+		justify-content: center;
+		align-items: center;
+		font-size: 13px;
+	}
+	.cello-header .top-nav .main-nav #login{
+		margin-right: 0;
+		width: auto;
+	}
+	.cello-header .top-nav .main-nav #login{
+		margin-right: 0;
+		width: auto;
+		height: auto;
+	}
+	.cello-header .top-nav .main-nav #login>span.fa-user-circle{
+		display: none;
+	}
+	.cello-header .top-nav .main-nav #login ul{
+		flex-wrap: wrap;
+	}
+	.cello-header .top-nav .main-nav #login .log-in ul li{
+		flex-wrap: wrap;
+		padding: 0 0;
+		color: white;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		flex: 0 0 100%;
+		max-width: 100%;
+		justify-content: center;
+	}
+	.cello-header .top-nav .main-nav #login .log-in ul li+li{
+		border-left: 0;
+	}
+	.cello-header .top-nav .main-nav #login .log-in ul li:before{
+		flex: 0 0 100%;
+		max-width: 100%;
+		font-size: 26px;
+		margin-bottom: .5rem;
+		text-align: center;
+	}
+	.cello-header .top-nav .main-nav #login .log-in ul li a{
+		margin-left: 0;
+		text-align: center;
+		color: white;
+	}
+}
+@media (max-width: 767.9px) {
+	.productItem .top-item .status {
+		height: 15px;
+		line-height: 15px;
+	}
+	.productItem .top-item .sale{
+		height: 15px;
+		line-height: 15px;
+		top: 30px
+	}
+}
