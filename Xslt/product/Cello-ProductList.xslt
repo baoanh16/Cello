@@ -27,7 +27,6 @@
 				<xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
 			</div>
 			<xsl:if test="/ProductList/NextPageUrl != ''">
-				
 			<div class="row list-item no-gutters active ajaxpagination" cello-tabContent="1">
 				<div class="col-12">
 					<div class="cello-viewMore"><a href="javascript:void(0)">
@@ -42,24 +41,7 @@
 			</div>
 			</xsl:if>
 		</div>
-		<script>
-			$('.cello-viewMore a').on('click', function (e) {
-				e.preventDefault()
-				var pageurl = $(this).attr('href')
-				$.ajax({
-					url: pageurl,
-					data: { isajax: true },
-					success: function (data) {
-						$('.ajaxresponsewrap').append($(data).find('.ajaxresponsewrap').html());
-						if ($(data).find('.cello-viewMore a').attr('href') == "") {
-							$('.cello-viewMore a').remove()
-						} else {
-							$('.cello-viewMore a').attr('href', $(data).find('.cello-viewMore a').attr('href'))
-						}
-					}
-				});
-			})
-		</script>
+
 	</xsl:template>
 
 	<xsl:template match="Product">
@@ -88,7 +70,7 @@
 				<xsl:if test="PromotionCatalogText != ''">
 						<div class="gift"><em class="fas fa-gift"></em><span>Quà tặng</span></div>
 					</xsl:if>
-					
+
 												<xsl:choose>
 							<xsl:when test="floor(ShowOption div 4) mod 2 = 1">
 								<div class="status stt-1"><span>New</span></div>
@@ -109,7 +91,7 @@
 								<div class="status stt-5"><span>Pre-Order</span></div>
 							</xsl:when>
 						</xsl:choose>
-						
+
 						<xsl:choose>
 							<xsl:when test="floor(ShowOption div 128) mod 2 = 1">
 								<div class="sale sl-1"><span>Sale cực sốc</span></div>
@@ -171,8 +153,8 @@
 			<xsl:value-of select="Title"></xsl:value-of>
 		</option>
 	</xsl:template>
-	
-	
+
+
 	<xsl:template match="ProductColorImage">
 		<a>
 			<xsl:attribute name="href">

@@ -27,9 +27,9 @@
 								<h1>
 									<xsl:value-of select="/ProductDetail/Title" disable-output-escaping="yes">
 									</xsl:value-of>
+								</h1>
 									<xsl:value-of select="/ProductDetail/EditLink" disable-output-escaping="yes">
 									</xsl:value-of>
-								</h1>
 								<div class="cobra">
 
 									<div class="code">
@@ -64,19 +64,17 @@
 						</div>
 						<div class="col-xl-7 table">
 							<div class="priceBox">
-								<xsl:if test="/ProductDetail/Price != ''">
 									<div class="price">
 										<xsl:value-of select="/ProductDetail/Price" disable-output-escaping="yes">
 										</xsl:value-of>
 									</div>
-								</xsl:if>
 
 								<xsl:if test="/ProductDetail/PreOrder = 'true' and /ProductDetail/SpecialPricePreOrder != ''">
 									<div class="price pre-order-price">
 										<p>
 											<span class="pre-order-text">
 												<xsl:text>Giá đặt Trước: </xsl:text>
-											</span> 
+											</span>
 											<span class="pre-order"><xsl:value-of select="/ProductDetail/SpecialPricePreOrder" disable-output-escaping="yes">
 											</xsl:value-of>
 											</span>
@@ -160,35 +158,40 @@
 							</div>
 							<xsl:if test="/ProductDetail/OutStock != 'true'">
 							<div class="productButton">
-								<xsl:choose>
-									<xsl:when test="/ProductDetail/PreOrder = 'true'">
-										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>Đặt Hàng Trước
-										</a>
-									</xsl:when>
-									<xsl:otherwise>
-										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>Mua ngay
-										</a>
-										<xsl:if test="/ProductDetail/EnableTraGop = 'true'">
-										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
-											onclick="AjaxCart.addproducttocart_details(this); return false;">
-											<xsl:attribute name="data-productid">
-												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
-											</xsl:attribute>Mua trả góp
-										</a>
-									</xsl:if>
-									</xsl:otherwise>
-								</xsl:choose>
+  								<xsl:choose>
+  									<xsl:when test="/ProductDetail/PreOrder = 'true'">
+  										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
+  											onclick="AjaxCart.addproducttocart_details(this); return false;">
+  											<xsl:attribute name="data-productid">
+  												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+  											</xsl:attribute>Đặt Hàng Trước
+  										</a>
+  									</xsl:when>
+  									<xsl:otherwise>
+  										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
+  											onclick="AjaxCart.addproducttocart_details(this); return false;">
+  											<xsl:attribute name="data-productid">
+  												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+  											</xsl:attribute>Mua ngay
+  										</a>
+  										<xsl:if test="/ProductDetail/EnableTraGop = 'true'">
+  										<a class="btnBuy btn-addtocart" href="javascript:void(0)"
+  											onclick="AjaxCart.addproducttocart_details(this); return false;">
+  											<xsl:attribute name="data-productid">
+  												<xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+  											</xsl:attribute>Mua trả góp
+  										</a>
+  									</xsl:if>
+  									</xsl:otherwise>
+  								</xsl:choose>
 							</div>
 						</xsl:if>
 
+              <input type="hidden" id="hdProductId">
+                <xsl:attribute name="value">
+                  <xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+                </xsl:attribute>
+              </input>
 							<div class="socialShare">
 								<a class="facebook">
 									<xsl:attribute name="href">
@@ -213,8 +216,10 @@
 										<span class="fas fa-gift"></span>
 										<span>QUÀ TẶNG &amp; KHUYẾN MÃI</span>
 									</h4>
+									<div id="giftProductTemplate">
 									<xsl:value-of select="/ProductDetail/GiftProductTemplate"
 										disable-output-escaping="yes" />
+									</div>
 									<div class="bottom">
 										<xsl:value-of select="/ProductDetail/GiftDescription"
 											disable-output-escaping="yes" />

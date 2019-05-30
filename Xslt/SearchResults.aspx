@@ -27,10 +27,12 @@
 					<asp:Button SkinID="DefaultButton" ID="btnRebuildSearchIndex" runat="server" />
 				</div>
 				<div class="searchresults">
-					<!-- <portal:gbCutePager ID="pgrTop" runat="server" Visible="false" /> -->
-					<div class="clear"></div>
-					<asp:Xml ID="xmlTransformer" runat="server"></asp:Xml>
-					<portal:gbCutePager ID="pgrBottom" runat="server" Visible="false" />
+					<!-- <portal:gbCutePager ID="pgrTop" runat="server" Visible="false" />
+					<div class="clear"></div> -->
+					<div class="cello-spList">
+						<asp:Xml ID="xmlTransformer" runat="server"></asp:Xml>
+						<portal:gbCutePager ID="pgrBottom" runat="server" Visible="false" />
+					</div>
 				</div>
 				<span id="spnAltSearchLinks" runat="server" visible="false">
 					<asp:Literal ID="litAltSearchMessage" runat="server" />

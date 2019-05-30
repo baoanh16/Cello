@@ -242,6 +242,8 @@
 						@media (min-width: 576px)
 							font-size: r(14px)
 							width: 120px
+							vertical-align: top
+							padding-top: 35px
 						p
 							font-weight: 500
 							font-size: r(11px)
@@ -273,6 +275,34 @@
 								font-size: r(20px)
 								font-weight: 700
 								color: #ff6600
+	.miniGift
+		padding: 10px 10px 10px 30px
+		.item
+			display: flex
+			position: relative
+			padding-top: 10px
+			+ .item
+				border-top: 1px dashed rgba(0,0,0,.1)
+				margin-top: 10px
+			&:before
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				width: 8px
+				height: 8px
+				border-radius: 50%
+				background: #2eb135
+				left: -18px
+				content: ''
+			.img
+				flex: 0 0 45px
+				max-width: 45px
+			.caption
+				flex-basis: 0
+				flex-grow: 1
+				max-width: 100%
+				padding-left: 10px
+				font-size: 12px
 	// Step 1
 	&.step-1
 		.cart-table-list

@@ -126,6 +126,9 @@
 			<div class="col-12">
 			<div class="cello-viewMore">
 				<a href="#" data-next="2" class="ajaxbrandviewmore btn-loadmore">
+          <xsl:attribute name="href">
+            <xsl:value-of select="UrlOutPagenumber"></xsl:value-of>
+          </xsl:attribute>
 					<xsl:attribute name="data-manufacturerid">
 						<xsl:value-of select="/ManufacturerDetail/ManufacturerId"></xsl:value-of>
 					</xsl:attribute>

@@ -141,6 +141,12 @@
 						</p>
 					</figcaption>
 				</figure>
+				
+				<xsl:if test="GiftProduct !=''">
+					<div class="miniGift">
+						<xsl:value-of select="GiftProduct" disable-output-escaping="yes"></xsl:value-of>
+					</div>
+				</xsl:if>
 			</td>
 			<td>
 				<p class="price">
