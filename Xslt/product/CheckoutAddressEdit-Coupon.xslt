@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes" />
@@ -35,7 +35,7 @@
 					</div>
 					<div class="desc">
 						<i>Sau khi áp dụng, Mã giảm giá có thể không dùng được trong vòng 15 phút.</i>
-						<p>Trong quá trình thanh toán, Cánh Cam sẽ tạm khóa mã giảm giá của quý khách để đảm bảo phiên
+						<p>Trong quá trình thanh toán, Cello sẽ tạm khóa mã giảm giá của quý khách để đảm bảo phiên
 							giao dịch được ổn định.</p>
 						<p>Mã giảm giá sẽ được mở lại ngay khi phiên giao dịch kết thúc</p>
 					</div>

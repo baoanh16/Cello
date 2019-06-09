@@ -156,6 +156,7 @@
 									</xsl:value-of>
 								</xsl:if>
 							</div>
+							<div class="productButton-section">
 							<xsl:if test="/ProductDetail/OutStock != 'true'">
 							<div class="productButton">
   								<xsl:choose>
@@ -186,7 +187,7 @@
   								</xsl:choose>
 							</div>
 						</xsl:if>
-
+</div>
               <input type="hidden" id="hdProductId">
                 <xsl:attribute name="value">
                   <xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>

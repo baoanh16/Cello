@@ -56,23 +56,23 @@ export const jsCore = () => src(ccUrl.scripts)
 
 export const styles = () => src('./lib/*.sass')
 	.pipe(plumber())
-	.pipe(gulpif(!Prod, sourcemap.init({ loadMaps: true })))
+	.pipe(sourcemap.init({ loadMaps: true }))
 	.pipe(sass({
 		fiber: fiber,
 		outputStyle: 'expanded',
 		precision: 10,
 		includePaths: ['.']
 	})).on('error', sass.logError)
-	.pipe(gulpif(Prod, postcss([autoprefixer({
+	.pipe(postcss([autoprefixer({
 		browsers: ['last 4 version', "IE 10"],
 		cascade: false,
-	})])))
-	.pipe(gulpif(Prod, minifierCSS()))
+	})]))
+	.pipe(minifierCSS())
 	.pipe(rename({
 		suffix: ".min"
 	}))
 	.pipe(plumber.stop())
-	.pipe(gulpif(!Prod, sourcemap.write()))
+	.pipe(sourcemap.write('.'))
 	.pipe(dest('dist/css'))
 	.on("end", browserSync.reload)
 
@@ -82,13 +82,13 @@ export const scripts = () => src([
 	'./scripts/*.js',
 	'./lib/**/*.js',
 ])
-	.pipe(gulpif(!Prod, sourcemap.init({ loadMaps: true })))
+	.pipe(sourcemap.init({ loadMaps: true }))
 	.pipe(concat("main.js"))
-	.pipe(gulpif(Prod, minifierJS()))
+	.pipe(minifierJS())
 	.pipe(rename({
 		suffix: ".min"
 	}))
-	.pipe(gulpif(!Prod, sourcemap.write()))
+	.pipe(sourcemap.write('.'))
 	.pipe(dest('dist/js'))
 	.on("end", browserSync.reload);
 

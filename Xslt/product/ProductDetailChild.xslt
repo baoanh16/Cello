@@ -51,6 +51,37 @@
 				</div>
 			</div>
 		</xsl:if>
+		   <div class="productButton">
+      <xsl:if test="/ProductDetail/OutStock != 'true'">
+        <xsl:choose>
+          <xsl:when test="/ProductDetail/PreOrder = 'true'">
+            <a class="btnBuy btn-addtocart" href="javascript:void(0)"
+              onclick="AjaxCart.addproducttocart_details(this); return false;">
+              <xsl:attribute name="data-productid">
+                <xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+              </xsl:attribute>Đặt Hàng Trước
+            </a>
+          </xsl:when>
+          <xsl:otherwise>
+            <a class="btnBuy btn-addtocart" href="javascript:void(0)"
+              onclick="AjaxCart.addproducttocart_details(this); return false;">
+              <xsl:attribute name="data-productid">
+                <xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+              </xsl:attribute>Mua ngay
+            </a>
+            <xsl:if test="/ProductDetail/EnableTraGop = 'true'">
+              <a class="btnBuy btn-addtocart" href="javascript:void(0)"
+                onclick="AjaxCart.addproducttocart_details(this); return false;">
+                <xsl:attribute name="data-productid">
+                  <xsl:value-of select="/ProductDetail/ProductId"></xsl:value-of>
+                </xsl:attribute>Mua trả góp
+              </a>
+            </xsl:if>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:if>
+    </div>
+
 	</xsl:template>
 
 	<xsl:template match="GroupSpecs">
