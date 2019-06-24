@@ -42,6 +42,26 @@ function LoadManufactureProduct($button)
 
 $(document).ready(function () {
 
+  $('.cello-viewMore a').on('click', function (e) {
+    e.preventDefault();
+    var pageurl = $(this).attr('href');
+    $.ajax({
+      url: pageurl,
+      data: { isajax: true },
+      success: function (data) {
+        $('.ajaxresponsewrap').append($(data).find('.ajaxresponsewrap').html());
+        if ($(data).find('.cello-viewMore a').length > 0) {
+          $('.cello-viewMore a').attr('href', $(data).find('.cello-viewMore a').attr('href'));
+        }
+        else {
+          $('.cello-viewMore a').remove();
+        }
+      }
+    });
+    return false;
+  })
+
+
 	$("a.ajaxbrandviewmore").click(function(){
 		LoadManufactureProduct(this);
 		return false;
@@ -808,8 +828,6 @@ var AjaxCart = {
 						$('.product-code').text(response.productCode);
 					if (response.editLink)
 						$('.edit-link').attr('href', response.editLink);
-					// if (response.productId)
-					//     $('.btn-addtocart').attr('data-productid', response.productId);
 					$("#giftProductTemplate").html('');
 					if (response.giftProductTemplate)
 							$("#giftProductTemplate").html(response.giftProductTemplate);
@@ -817,15 +835,35 @@ var AjaxCart = {
 						document.title = response.metaTitle;
 					if (response.metaDescription)
 						$('meta[name="description"]').attr("content", response.metaDescription);
-
-					//$('.giftBox .item').html(response.giftDescription);
-
 					if (response.childProductDetail) {
-						// if ($(response.childProductDetail).filter('.productSamePrice').length)
-						//     $('.productSamePrice').html($(response.childProductDetail).filter('.productSamePrice').html());
-						// if ($(response.childProductDetail).filter('.product-specifications').length)
-						//     $('.product-specifications').html($(response.childProductDetail).filter('.product-specifications').html());
-						$('.ajaxproductslider').html($($(response)[0].childProductDetail)[2])
+						console.log($($(response)[0].childProductDetail));
+						if($(response.childProductDetail).filter(".ajaxproductslider") != undefined)
+							$('.ajaxproductslider').html($(response.childProductDetail).filter(".ajaxproductslider"))
+
+						if($(response.childProductDetail).filter(".productButton") != undefined)
+							$(".productButton-section").html($(response.childProductDetail).filter(".productButton"));
+
+						if($(response.childProductDetail).filter(".tr.quantity") != undefined)
+							$(".productInfo .quantity").html($(response.childProductDetail).filter(".tr.quantity").html());
+
+						if($(response.childProductDetail).filter(".tr.status") != undefined)
+							$(".status-section").html($(response.childProductDetail).filter(".tr.status"));
+
+
+					//process Button
+					var strOutStock="<span>Còn hàng</span>";
+					// if(response.outStock)
+					// 	strOutStock="<span>Hết hàng</span>";
+					// $(".productInfo .status").html("<span>Tình trạng</span>"+strOutStock);
+
+					// $(".productButton").html("");
+
+					// if(!response.outStock)
+					// 	$(".productButton").append('<a class="btnBuy btn-addtocart" href="javascript:void(0)"	onclick="AjaxCart.addproducttocart_details(this); return false;" data-productid="'+$("#hdProductId").val()+'">Mua ngay</a>');
+					// if(response.enableTraGop)
+					// 	$(".productButton").append('<a class="btnBuy btn-addtocart" href="javascript:void(0)"	onclick="AjaxCart.addproducttocart_details(this); return false;" data-productid="'+$("#hdProductId").val()+'">Mua trả góp</a>');
+
+
 
 
 						var small = new Swiper('.cello-spList .thumbImages', {

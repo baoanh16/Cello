@@ -51,6 +51,25 @@
 				</div>
 			</div>
 		</xsl:if>
+
+			<div class="tr quantity">
+			  <xsl:if test="/ProductDetail/OutStock != 'true' ">
+					<span>Số lượng</span>
+					<span>
+						<span class="decrease">-</span>
+						<!-- <input id="number" type="text" value="1" /> -->
+						<input value="1" id="number">
+						<xsl:attribute name="name">
+							<xsl:text>addtocart_</xsl:text>
+							<xsl:value-of select="/ProductDetail/ProductId"
+								disable-output-escaping="yes"></xsl:value-of>
+							<xsl:text>.EnteredQuantity</xsl:text>
+						</xsl:attribute>
+						</input>
+						<span class="increase">+</span>
+					</span>
+        </xsl:if>
+			</div>
 		   <div class="productButton">
       <xsl:if test="/ProductDetail/OutStock != 'true'">
         <xsl:choose>
@@ -81,6 +100,15 @@
         </xsl:choose>
       </xsl:if>
     </div>
+    <div class="tr status">
+			<span>Tình trạng</span>
+			<xsl:if test="/ProductDetail/OutStock != 'true' ">
+				<span>Còn hàng</span>
+			</xsl:if>
+			<xsl:if test="/ProductDetail/OutStock = 'true' ">
+				<span>Hết hàng</span>
+			</xsl:if>
+		</div>
 
 	</xsl:template>
 

@@ -80,7 +80,7 @@
 					</xsl:if>
 					<a class="btn btn-next" onclick="setLocation('/dang-nhap');return false;">
 						<!-- <xsl:attribute name="onclick"><xsl:text>setLocation('</xsl:text><xsl:value-of select="/ShoppingCart/CheckoutPageUrl"></xsl:value-of><xsl:text>')</xsl:text></xsl:attribute> -->
-						<span>
+						<span data-text-mobile="Thanh toán">
 							<xsl:value-of select="/ShoppingCart/CheckoutProcessText"></xsl:value-of>
 						</span>
 						<span class="mdi mdi-chevron-right"></span>

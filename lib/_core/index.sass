@@ -136,6 +136,8 @@ p, h1, h2, h3, h4, h5, h6
 					+fz(r(18px))
 			.detail-info
 				+pad(r(20px))
+				.img
+					display: none
 				.price
 					padding-left: 24px
 					margin-top: 10px
@@ -186,6 +188,11 @@ p, h1, h2, h3, h4, h5, h6
 			border-bottom-left-radius: 35px
 			display: flex
 			align-items: center
+			@media (max-width: 767.9px)
+				justify-content: center
+				height: 25px
+				padding: 0 7px
+				line-height: 25px
 			span
 				+fz(r(11px))
 				text-transform: uppercase
@@ -223,18 +230,18 @@ p, h1, h2, h3, h4, h5, h6
 			position: absolute
 			top: 10px
 			right: 0
-			+fz(r(11px))
-			+lh(35px)
-			height: 35px
 			+pad(null 5px null 15px)
 			border-top-left-radius: 35px
 			border-bottom-left-radius: 35px
+			height: 35px
+			+fz(r(11px))
+			+lh(35px)
 			@media (max-width: 767.9px)
-				padding: 0 7px
-				height: 25px
 				display: flex
 				justify-content: center
 				align-items: center
+				height: 25px
+				padding: 0 7px
 				line-height: 25px
 			&.stt-1
 				background: #fe6600
@@ -327,20 +334,23 @@ p, h1, h2, h3, h4, h5, h6
 			justify-content: space-between
 			.old
 				span
-					+fz(r(12px))
+					font-size: 12px
 					text-decoration: line-through
 					color: #999999
 					text-transform: uppercase
+					@media (max-width: 767.98px)
+						font-size: 9px
 			.new
 				margin-left: auto
 				@media (max-width: 767.9px)
 					margin-left: 0
 				span
-					+fz(r(18px))
+					font-size: 18px
 					color: #ff6600
 					text-transform: uppercase
 					@media (max-width: 767.9px)
-						font-size: 13px
+						font-size: 12px
+						font-weight: 500
 	@media (min-width: 992px)
 		overflow: visible
 		.gift-detail

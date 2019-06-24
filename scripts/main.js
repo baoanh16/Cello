@@ -149,4 +149,9 @@ $(document).ready(function () {
 	$('#btn-showManufacturerDescription').on('click', function () {
 		$('.term-content').toggleClass('active')
 	})
+	if($(window).width()<768){
+		$("[data-text-mobile]").each(function(){
+		$(this).text($(this).attr('data-text-mobile'))
+	})
+	}
 })
