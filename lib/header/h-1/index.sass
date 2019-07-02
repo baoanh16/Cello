@@ -103,6 +103,8 @@
 						// display: none
 						// top: 100%
 						// right: 0
+						opacity: 1!important
+						display: block!important
 						ul
 							display: flex
 							li
@@ -361,10 +363,11 @@
 					background: none
 					top: auto
 					right: auto
-					max-width: initial
-					width: 100%
 					position: relative
 					flex-direction: row
+					flex-basis: 0
+					flex-grow: 1
+					max-width: 100%
 					.item
 						+pad(0)
 						flex-basis: 0
@@ -394,6 +397,7 @@
 
 					.Module-206
 						flex: 0 0 75%
+						max-width: 75%
 						.ModuleContent
 							display: flex
 							flex-wrap: wrap
@@ -408,6 +412,8 @@
 			height: 50px
 			display: flex
 			align-items: center
+		@media (max-width: 991.98px)
+			display: none
 		.nav
 			position: relative
 			display: flex
